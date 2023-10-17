@@ -1,0 +1,124 @@
+.hidden {
+	display: none;
+}
+
+.menu-item {
+	background-color: var(--color1);
+	border: var(--color1) 1px solid;
+	padding: 1%;
+}
+
+.menu-item-focus {
+	background-color: #819382;
+}
+
+.menu-item:hover {
+	background: var(--color2);
+	color: var(--color1);
+	cursor: pointer;
+}
+
+.minimenu {
+	color: var(--color2);
+	display: flex;
+	justify-content: center;
+}
+
+.minimenu__left {
+	border-radius: 14px 0 0 14px;
+}
+
+.minimenu__right {
+	border-radius: 0 14px 14px 0;
+}
+
+.visible {
+	display: block;
+}
+
+a:hover.links {
+	border-bottom: 1.5px dotted #819382;
+	color: #819382;
+}
+
+a:link.links,a:visited.links {
+	border-bottom: 1.5px dotted var(--color1);
+	color: var(--color1);
+}
+
+body {
+	background-color: var(--color2);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+}
+
+fieldset {
+	border: 1px solid var(--color1);
+	border-radius: 10px;
+	margin: 2em 10% 0;
+	padding: 1em;
+}
+
+h1.title {
+	font-family: DendriticVoltage;
+	font-size: 3.5em;
+	line-height: .9;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.2em;
+	margin-bottom: 3em;
+	opacity: .5;
+	text-align: center;
+}
+
+h3 {
+	color: var(--color1);
+	font-family: DendriticVoltage;
+	font-size: 1.8em;
+	margin-top: 1.2em;
+	opacity: .5;
+}
+
+h4 {
+	color: var(--color1);
+	font-size: 1.2em;
+	margin-left: .4em;
+	margin-top: .4em;
+	opacity: .5;
+}
+
+legend {
+	color: var(--color1);
+	font-family: DendriticVoltage;
+	font-size: 1.8em;
+}
+
+main {
+	color: var(--color1);
+	padding: 6em 5% 5%;
+}
+
+p,li {
+	font-size: 1.1em;
+	margin: 2px 0;
+	text-align: justify;
+}
+
+@media only screen and (max-width: 600px) {
+	.mobile-menu-item {
+		padding: .5em;
+	}
+
+	h1.title {
+		font-size: 2em;
+	}
+
+	legend {
+		font-size: 1.3em;
+	}
+
+	main {
+		padding: 6em 1% 1%;
+	}
+}

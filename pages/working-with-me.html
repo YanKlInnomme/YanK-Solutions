@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/site.webmanifest">
+  <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="../favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#0f2f2b">
+  <meta name="msapplication-config" content="../favicon/browserconfig.xml">
+  <meta name="theme-color" content="#f3f8d8">
+  <link rel="stylesheet" href="../css/basic.css">
+  <link rel="stylesheet" href="../css/working-with-me.css">
+  <title>Travailler avec moi · YanK Solutions</title>
+</head>
+<body>
+  <nav class="nav">
+    <h1 class="nav__logo"><a href="../index.html">YanK Solutions</a></h1>
+    <ul class="nav__list">
+      <li class="nav__item burger" id="burger">
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <div class="form">
+      <form action="process-form__working-with-me.php" method="post">
+        <fieldset class="row"><legend>&ensp;Travailler avec moi&ensp;</legend>
+          <div class="column-a">
+            <div class="group">      
+              <input class="zoom" type="text" required name="prenom">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-user"></i>&ensp;Prénom</label>
+            </div>
+            <div class="group">      
+              <input class="zoom" type="text" required name="nom">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-user"></i>&ensp;Nom</label>
+            </div>
+            <div class="group">      
+              <input class="zoom" type="email" required name="courriel">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-envelope"></i>&ensp;Courriel</label>
+            </div>
+            <div class="group">      
+              <input class="zoom" type="tel" pattern="[0-9]*" required name="telephone">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-phone"></i>&ensp;Téléphone</label>
+            </div>
+            <div class="group">      
+              <input class="zoom" type="text" required name="adresse">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-house"></i>&ensp;Adresse</label>
+            </div>
+            <div class="group">      
+              <input class="zoom" type="text" pattern="[0-9]*" inputmode="numeric" required name="code-postal">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-house"></i>&ensp;Code postal</label>
+            </div>
+            <div class="group">      
+              <input class="zoom" type="text" required name="ville">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-house"></i>&ensp;Ville</label>
+            </div>
+          </div>
+          <div class="column-b">
+            <div class="group">      
+              <label class="select-label"><i class="fa-solid fa-envelope-open-text"></i>&ensp;Votre demande</label>
+              <select required name="demande">
+                <option disabled selected>Exprimez votre demande</option>
+                <optgroup label="Animation JdR">
+                  <option>Particulier · Événementiel</option>
+                  <option>Particulier · Initiation</option>
+                  <option>Particulier · One-shot</option>
+                  <option>Particulier · Campagne</option>
+                  <option>Particulier · Initiation</option>
+                  <option>Convention · Initiation</option>
+                  <option>Convention · Talk-show</option>
+                  <option>Entreprise · Scénario</option>
+                </optgroup>
+                <optgroup label="Écriture">
+                  <option>Système de jeu</option>
+                  <option>Univers de jeu</option>
+                  <option>Scénario</option>
+                  <option>Background</option>
+                  <option>Autres</option>
+                </optgroup>
+                <optgroup label="Formation">
+                  <option>Jeu de Rôles</option>
+                  <option>Informatique</option>
+                  <option>Programmation</option>
+                  <option>Systèmes N.L.P.</option>
+                  <option>D.A.O.</option>
+                </optgroup>
+                <optgroup label="Infographie">
+                  <option>Illustration</option>
+                  <option>Logo</option>
+                  <option>Bannière</option>
+                  <option>Ensemble graphique</option>
+                  <option>Autres</option>
+                </optgroup>
+                <optgroup label="Programmation">
+                  <option>Site Web basique</option>
+                  <option>Site Web professionnel</option>
+                  <option>Site Web sur mesure</option>
+                  <option>E-commerce</option>
+                  <option>Autres</option>
+                </optgroup>
+                <optgroup label="Construction">
+                  <option>Dossier de Permis de Construire</option>
+                  <option>Plans de Coffrage</option>
+                  <option>Plans de Ferraillage</option>
+                </optgroup>
+                <optgroup label="Divers">
+                  <option>Informations complémentaires</option>
+                  <option>Problèmes techniques</option>
+                  <option>Avis & Observations</option>
+                  <option>Réclamation</option>
+                  <option>Données personnelles</option>
+                  <option>Autres</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="group">
+              <label class="textarea-label"><i class="fa-solid fa-envelope-open-text"></i>&ensp;Détails de la demande</label>
+              <textarea placeholder="Détaillez-moi vos attentes" required name="details"></textarea>
+            </div>
+            <div class="group">
+              <label class="textarea-label"><i class="fa-solid fa-envelope-open-text"></i>&ensp;Informations complémentaires</label>
+              <textarea placeholder="Mettez ici tout ce qui vous semble utile" name="informations"></textarea>
+            </div>
+            <div class="group checkbox-group">
+              <input type="checkbox" id="privacy-checkbox">
+              <label for="privacy-checkbox">J'accepte que mes informations soient traitées conformément à la <a target="_blank" href="../pages/personal-data.html">politique de confidentialité</a>.</label>
+            </div>
+            <div class="group">
+              <button class="button" type="submit"><span><i class="fa-solid fa-paper-plane"></i>&ensp;Envoi</span></button>
+            </div>
+            <div class="group">
+              <p>Vous pouvez aussi me contacter sur&nbsp;:</p>
+              <a href="https://discordapp.com/users/yanklinnomme" target="_blank" class="links"><i class="fa-brands fa-discord"></i></a>
+              <a href="https://twitter.com/_YanK_" target="_blank" class="links"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://ludosphere.fr/@YanK" target="_blank" class="links"><i class="fa-brands fa-mastodon"></i></a>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>  
+  </main>
+  <section class="overlay">
+    <ul class="level-1">
+      <li>
+        <ul class="level-2">
+          <li>
+            <p>Animation sur table&ensp;<i class="fa-solid fa-dice-d20"></i></p>
+            <ul class="level-3">
+              <li><a href="../pages/what-is-a-role-playing-game.html">Qu'est-ce qu'un Jeu de Rôles ?</a></li>
+              <li><a href="../pages/what-are-we-playing.html">À quoi joue-t-on ?</a></li>
+              <li><a href="../pages/services-for-private-customers.html">Prestations aux Particuliers</a></li>
+              <li><a href="../pages/services-for-local-authorities.html">Prestations aux Collectivités</a></li>
+              <li><a href="../pages/services-for-company.html">Prestations à l'Entreprise</a></li>
+              <li><a href="../pages/trade-shows-and-conventions.html">Salons & Conventions</a></li>
+              <li><a href="../pages/party-agenda.html">Agenda des Parties</a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Écriture&ensp;<i class="fa-solid fa-feather-pointed"></i></p>
+            <ul class="level-3">
+              <li><a href="../pages/game-system.html">Système de Jeu</a></li>
+              <li><a href="../pages/game-universe.html">Univers de Jeu</a></li>
+              <li><a href="../pages/scenario.html">Scénario</a></li>
+              <li><a href="../pages/background.html">Background</a></li>
+              <li><a href="../pages/more-writing.html"><i class="fa-solid fa-plus"></i></a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Formation&ensp;<i class="fa-solid fa-graduation-cap"></i></p>
+            <ul class="level-3">
+              <li><a href="../pages/role-playing-game.html">Jeu de Rôles</a></li>
+              <li><a href="../pages/computer-science.html">Informatique</a></li>
+              <li><a href="../pages/programming.html">Programmation</a></li>
+              <li><a href="../pages/natural-language-processing-systems.html">Systèmes de traitement du langage naturel (NLP)</a></li>
+              <li><a href="../pages/computer-aided-design.html">Dessin Assisté par Ordinateur</a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Infographie&ensp;<i class="fa-solid fa-draw-polygon"></i></p>
+            <ul class="level-3">
+              <li><a href="../pages/illustration.html">Illustration</a></li>
+              <li><a href="../pages/logo.html">Logo</a></li>
+              <li><a href="../pages/banner.html">Bannière</a></li>
+              <li><a href="../pages/graphics-set.html">Ensemble graphique</a></li>
+              <li><a href="../pages/more-infographics.html"><i class="fa-solid fa-plus"></i></a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Programmation&ensp;<i class="fa-solid fa-file-code"></i></p>
+            <ul class="level-3">
+              <li><a href="../pages/basic-website.html">Site Web basique</a></li>
+              <li><a href="../pages/professional-website.html">Site Web professionnel</a></li>
+              <li><a href="../pages/custom-website.html">Site Web sur mesure</a></li>
+              <li><a href="../pages/e-commerce.html">E-commerce</a></li>
+              <li><a href="../pages/more-programming.html"><i class="fa-solid fa-plus"></i></a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Construction&ensp;<i class="fa-solid fa-pen-ruler"></i></p>
+            <ul class="level-3">
+              <li><a href="../pages/building-permit-file.html">Dossier de Permis de Construire</a></li>
+              <li><a href="../pages/formwork-drawings.html">Plans de Coffrage</a></li>
+              <li><a href="../pages/reinforcement-drawings.html">Plans de Ferraillage</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul class="level-a">
+          <h3>Ressources</h3>
+          <ul>
+            <li><i class="fa-brands fa-github"></i>&ensp;<a target="_blank" href="https://github.com/YanKlInnomme">Codées sur gitHub</a></li>
+            <li><i class="fa-solid fa-download"></i>&ensp;<a target="_blank" href="https://itch.io/profile/yanklinnomme">Numériques sur ItchIO</a></li>
+            <li><i class="fa-solid fa-book"></i>&ensp;<a target="_blank" href="https://www.lulu.com/fr/spotlight/yank">Physiques sur Lulu</a></li>
+          </ul>
+          <h3>Liens</h3>
+          <ul>
+            <li><i class="fa-brands fa-mastodon"></i>&ensp;<a target="_blank" href="https://ludosphere.fr/@YanK">Ludosphère</a></li>
+            <li><i class="fa-solid fa-play"></i>&ensp;<a target="_blank" href="https://tube.portes-imaginaire.org/c/yank_channel/videos">Archives Numériques Mémorielles</a></li>
+            <li><i class="fa-brands fa-twitch"></i>&ensp;<a target="_blank" href="https://www.twitch.tv/yanklinnomme">Ça part en Live</a></li>
+          </ul>
+          <p><small><i class="fa-solid fa-plus"></i>&ensp;<a target="_blank" href="https://bento.me/y4nk">Autres liens</a></small></p>
+          <h3>À propos de</h3>
+          <ul>
+            <li><i class="fa-solid fa-user"></i>&ensp;<a href="../pages/my-story.html">Mon histoire</a></li>
+            <li><i class="fa-solid fa-hand-holding-heart"></i>&ensp;<a href="../pages/my-commitments.html">Mes engagements</a></li>
+            <li><i class="fa-solid fa-heart"></i>&ensp;<a href="../pages/working-with-me.html">Travailler avec moi</a></li>
+          </ul>
+          <ul>
+            <h3>Informations</h3>
+            <li><i class="fa-solid fa-scale-balanced"></i>&ensp;<a href="../pages/terms-of-use.html">Mentions légales</a></li>
+            <li><i class="fa-solid fa-handshake"></i>&ensp;<a href="../pages/service-contracts.html">Contrats de services</a></li>
+            <li><i class="fa-solid fa-magnifying-glass-chart"></i>&ensp;<a href="../pages/personal-data.html">Données personnelles</a></li>
+          </ul>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <script src="https://kit.fontawesome.com/3289bc472c.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="../js/basic.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* Base styles */
+body {
+  background-color: var(--color2);
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+
+main {
+  padding: 6em 50px 50px 50px;
+}

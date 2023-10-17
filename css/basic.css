@@ -1,0 +1,292 @@
+@font-face {
+	font-family: "DendriticVoltage";
+	src: url(../fonts/dendritic-voltage.eot),url(../fonts/dendritic-voltage.eot?#iefix) format("embedded-opentype"),url(../fonts/dendritic-voltage.woff2) format("woff2"),url(../fonts/dendritic-voltage.woff) format("woff"),url(../fonts/dendritic-voltage.ttf) format("truetype"),url(../fonts/dendritic-voltage.otf) format("opentype"),url(../fonts/dendritic-voltage.svg#DendriticVoltage) format("svg");
+}
+
+@font-face {
+	font-family:"DreamOrphans";
+src:url(../fonts/dream-orphans.eot),url(../fonts/dream-orphans.eot?#iefix) format("embedded-opentype"),url(../fonts/dream-orphans.woff2) format("woff2"),url(../fonts/dream-orphans.woff) format("woff"),url(../fonts/dream-orphans.ttf) format("truetype"),url(../fonts/dream-orphans.otf) format("opentype"),url(../fonts/dream-orphans.svg#DendriticVoltage) format("svg");
+}
+
+@font-face {
+	font-family:"LemonTuesday";
+src:url(../fonts/lemon-tuesday.eot),url(../fonts/lemon-tuesday.eot?#iefix) format("embedded-opentype"),url(../fonts/lemon-tuesday.woff2) format("woff2"),url(../fonts/lemon-tuesday.woff) format("woff"),url(../fonts/lemon-tuesday.ttf) format("truetype"),url(../fonts/lemon-tuesday.otf) format("opentype"),url(../fonts/lemon-tuesday.svg#DendriticVoltage) format("svg");
+}
+
+@font-face {
+	font-family:"HeyAugust";
+src:url(../fonts/hey-august.eot),url(../fonts/hey-august.eot?#iefix) format("embedded-opentype"),url(../fonts/hey-august.woff2) format("woff2"),url(../fonts/hey-august.woff) format("woff"),url(../fonts/hey-august.ttf) format("truetype"),url(../fonts/hey-august.otf) format("opentype"),url(../fonts/hey-august.svg#DendriticVoltage) format("svg");
+}
+
+@font-face {
+	font-family:"SansationBold";
+src:url(../fonts/sansation-bold.eot),url(../fonts/sansation-bold.eot?#iefix) format("embedded-opentype"),url(../fonts/sansation-bold.woff2) format("woff2"),url(../fonts/sansation-bold.woff) format("woff"),url(../fonts/sansation-bold.ttf) format("truetype"),url(../fonts/sansation-bold.otf) format("opentype"),url(../fonts/sansation-bold.svg#SansationBold) format("svg");
+}
+
+*,::before,::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.burger {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	height: 28px;
+	justify-content: space-evenly;
+	width: min-content;
+}
+
+.burger.active .burger__bar:nth-of-type(1) {
+	background-color: var(--color2)!important;
+	transform: translateY(-3px) scaleX(1.3);
+}
+
+.burger.active .burger__bar:nth-of-type(2) {
+	background-color: var(--color2)!important;
+}
+
+.burger.active .burger__bar:nth-of-type(3) {
+	background-color: var(--color2)!important;
+	transform: translateY(3px) scaleX(1.3);
+}
+
+.burger__bar {
+	background-color: var(--color1);
+	border-radius: 200px;
+	display: block;
+	height: 3px;
+	transition: transform .3s 0.3s,background-color 2s;
+	width: 22px;
+}
+
+.header {
+	min-height: 100vh;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+.level-1 {
+	display: grid;
+	grid-auto-rows: min-content;
+	grid-gap: 2em;
+	grid-template-columns: 65% 1fr;
+}
+
+.level-1 li:nth-of-type(1) {
+	grid-column: 1/2;
+	grid-row: 1/4;
+}
+
+.level-1 li:nth-of-type(2) {
+	grid-column: 2/3;
+	grid-row: 1/2;
+}
+
+.level-1 li:nth-of-type(3) {
+	grid-column: 2/3;
+	grid-row: 2/3;
+}
+
+.level-1 li:nth-of-type(4) {
+	grid-column: 2/3;
+	grid-row: 3/4;
+}
+
+.level-1 p {
+	margin: .5em 0 0 .5em;
+}
+
+.level-1 p small {
+	cursor: pointer;
+	font-size: 1rem;
+	opacity: .5;
+}
+
+.level-1 p small:hover {
+	color: var(--color2);
+	opacity: 1;
+}
+
+.level-1 ul > li {
+	font-size: 1.2rem;
+	padding: .3em;
+	transition: color .3s;
+}
+
+.level-2 {
+	padding: .3em 1em;
+}
+
+.level-2 li p {
+	border-bottom: 2px solid var(--color2);
+	color: var(--color2);
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin: 1em 0;
+	text-transform: uppercase;
+}
+
+.level-3 {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.level-3 > li:hover {
+	background-color: var(--color2);
+}
+
+.level-3 li {
+	background-color: var(--color1);
+	border-radius: 500px;
+	cursor: pointer;
+	font-size: 1rem!important;
+	margin-bottom: 7px;
+	margin-right: 7px;
+	padding: .5em 1em!important;
+}
+
+.level-3 li a:hover {
+	color: var(--color1);
+}
+
+.level-3 li a:link,.level-3 li a:visited {
+	color: var(--color2);
+}
+
+.level-3 li:hover a {
+	color: var(--color1);
+}
+
+.level-a a.hovered-a > i {
+	transform: scale(1.7);
+	transition: transform .3s ease;
+}
+
+.level-a a:hover {
+	border-bottom: 2px dotted currentColor;
+	color: var(--color2);
+	cursor: pointer;
+}
+
+.level-a a:link,.level-a a:visited {
+	color: var(--color2);
+}
+
+.level-a h3 {
+	color: var(--color2);
+	font-family: DendriticVoltage;
+	font-size: 1.5rem;
+	font-weight: 200;
+	opacity: .8;
+	padding-top: 40px;
+	text-transform: uppercase;
+}
+
+.level-a i {
+	color: var(--color2);
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 1em 5em;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+
+.nav__item:not(.burger) {
+	margin-right: 1.5em;
+	visibility: hidden;
+}
+
+.nav__list {
+	color: var(--white);
+	display: flex;
+}
+
+.nav__logo {
+	background-color: var(--color2);
+	color: var(--color1);
+	font-size: 1.3rem;
+	font-weight: 400;
+	padding: 5px 10px;
+}
+
+.nav__logo a:link,.nav__logo a:visited {
+	color: var(--color1);
+}
+
+.nav__logo:hover {
+	background-color: var(--color1);
+	cursor: pointer;
+}
+
+.nav__logo:hover a {
+	color: var(--color2);
+}
+
+.overlay {
+	-webkit-clip-path: polygon(0% 0%,100% 0%,100% 0%,0% 0%);
+	background-color: var(--white);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+	clip-path: polygon(0% 0%,100% 0%,100% 0%,0% 0%);
+	left: 0;
+	min-height: 100vh;
+	padding: 8em 5em 2em;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 9;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: "SansationBold",sans-serif;
+	--black: #242424;
+	--color1: #f3f8d8;
+	--color2: #0f2f2b;
+	--color3: #CC2936;
+	--white: #f5f5f5;
+}
+
+ul {
+	list-style: none;
+}
+
+@media screen and (max-width: 600px) {
+	.level-1 {
+		grid-template-columns: 1fr;
+	}
+
+	.level-1 li:nth-of-type(1),.level-1 li:nth-of-type(2),.level-1 li:nth-of-type(3),.level-1 li:nth-of-type(4) {
+		grid-column: 1/2;
+		grid-row: span 1;
+	}
+
+	.level-a a {
+		font-size: .85em;
+	}
+
+	.level-a h3 {
+		font-size: 1.2em;
+		padding-top: 30px;
+	}
+
+	.nav {
+		padding: 1em 2em;
+	}
+
+	.nav__logo {
+		font-size: .9rem;
+	}
+
+	.overlay {
+		padding: 8em 2em 2em;
+	}
+}

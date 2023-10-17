@@ -1,0 +1,212 @@
+.area-1 {
+	border: 1px solid var(--color1);
+	color: var(--color1);
+	font-family: DreamOrphans;
+	font-size: 1.9em;
+	grid-area: area-1;
+	line-height: 1.2;
+	padding: 3.5% 2% 2%;
+	text-align: justify;
+}
+
+.area-1:hover {
+	background-color: var(--color1);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+	color: var(--color2);
+}
+
+.area-2 {
+	border: 1px solid var(--color1);
+	grid-area: area-2;
+	overflow: hidden;
+	position: relative;
+}
+
+.area-2 img {
+	height: 100%;
+	left: 0;
+	object-fit: cover;
+	position: relative;
+	top: 0;
+	transition: .3s;
+	width: 100%;
+	z-index: 1;
+}
+
+.area-2:hover img {
+	transform: scale(1.1);
+}
+
+.area-3 {
+	border: 1px solid var(--color1);
+	color: var(--color1);
+	font-family: DreamOrphans;
+	font-size: 1.2em;
+	grid-area: area-3;
+	padding: 3%;
+	text-align: justify;
+}
+
+.area-3:hover {
+	background-color: var(--color1);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+	color: var(--color2);
+}
+
+.area-4 {
+	border: 1px solid var(--color1);
+	grid-area: area-4;
+	overflow: hidden;
+	position: relative;
+}
+
+.area-4 img {
+	height: 100%;
+	left: 0;
+	object-fit: cover;
+	position: relative;
+	top: 0;
+	transition: .3s;
+	width: 100%;
+	z-index: 1;
+}
+
+.area-4:hover img {
+	transform: scale(1.1);
+}
+
+.area-5 {
+	background-color: var(--color1);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+	border: 1px solid var(--color1);
+	color: var(--color2);
+	font-family: DreamOrphans;
+	font-size: 2.15em;
+	grid-area: area-5;
+	line-height: 1.55;
+	padding: 3%;
+	text-align: justify;
+}
+
+.area-5:hover {
+	background-color: transparent;
+	color: var(--color1);
+}
+
+.area-6 {
+	background-color: var(--color1);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+	border: 1px solid var(--color1);
+	color: var(--color2);
+	font-family: DreamOrphans;
+	font-size: 1.37em;
+	grid-area: area-6;
+	line-height: 1.2;
+	padding: 3%;
+	text-align: justify;
+}
+
+.area-6:hover {
+	background-color: transparent;
+	color: var(--color1);
+}
+
+.area-7 {
+	border: 1px solid var(--color1);
+	color: var(--color1);
+	font-family: DreamOrphans;
+	font-size: 1.25em;
+	grid-area: area-7;
+	line-height: 1.2;
+	padding: 3% 2% 2% 3%;
+	text-align: justify;
+}
+
+.area-7:hover {
+	background-color: var(--color1);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+	color: var(--color2);
+}
+
+.area-8 {
+	border: 1px solid var(--color1);
+	color: var(--color1);
+	font-family: DreamOrphans;
+	font-size: 1.6em;
+	grid-area: area-8;
+	line-height: 1.1;
+	padding: 6% 3% 3% 6%;
+	text-align: justify;
+}
+
+.area-8:hover {
+	background-color: var(--color1);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+	color: var(--color2);
+}
+
+.container {
+	display: grid;
+	gap: 0 0;
+	grid-auto-flow: row;
+	grid-template-areas: "area-1 area-1 area-1 area-1 area-2 area-2 area-2 area-2" "area-1 area-1 area-1 area-1 area-2 area-2 area-2 area-2" "area-1 area-1 area-1 area-1 area-2 area-2 area-2 area-2" "area-3 area-3 area-4 area-4 area-2 area-2 area-2 area-2" "area-3 area-3 area-4 area-4 area-6 area-6 area-8 area-8" "area-5 area-5 area-5 area-5 area-6 area-6 area-8 area-8" "area-5 area-5 area-5 area-5 area-7 area-7 area-8 area-8" "area-5 area-5 area-5 area-5 area-7 area-7 area-8 area-8";
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+body {
+	background-color: var(--color2);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+}
+
+h4 {
+	-webkit-text-stroke: .02em var(--color2);
+	color: var(--color1);
+	font-family: DendriticVoltage;
+	font-size: 3.7vw;
+	left: 40px;
+	position: relative;
+	top: 22px;
+	z-index: 2;
+}
+
+main {
+	padding: 6em 20px 20px;
+}
+
+@media (max-width: 600px) {
+	.area-1 {
+		font-size: 1.1em;
+	}
+
+	.area-5 {
+		font-size: 1.43em;
+		line-height: 1.2;
+	}
+
+	.area-8 {
+		font-size: 1.05em;
+		line-height: 1.2;
+	}
+
+	.container {
+		grid-template-areas: "area-1 area-1" "area-2 area-2" "area-3 area-3" "area-4 area-4" "area-5 area-5" "area-6 area-6" "area-7 area-7" "area-8 area-8";
+		grid-template-columns: 1fr 1fr;
+	}
+
+	h4 {
+		font-size: 1.25em;
+		left: 20px;
+		top: 8px;
+	}
+
+	main {
+		padding: 5em 10px 10px;
+	}
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+	main {
+		padding: 3em 15px 15px;
+	}
+}

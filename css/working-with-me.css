@@ -1,0 +1,285 @@
+.bar {
+	display: block;
+	position: relative;
+	width: 100%;
+}
+
+.bar:after {
+	right: 50%;
+}
+
+.bar:before {
+	left: 50%;
+}
+
+.bar:before,.bar:after {
+	background: var(--color2);
+	bottom: 1px;
+	content: '';
+	height: 2px;
+	position: absolute;
+	width: 0;
+}
+
+.button {
+	background-color: var(--color2);
+	border: none;
+	border-radius: 1em;
+	color: #3E5854;
+	cursor: pointer;
+	display: block;
+	font-size: 15px;
+	font-weight: 600;
+	margin: 0 auto;
+	outline: none;
+	overflow: hidden;
+	padding: 15px 50px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.button span {
+	position: relative;
+	z-index: 1;
+}
+
+.button:after {
+	-webkit-transform: translateX(-100%) translateY(-25%) rotate(45deg);
+	-webkit-transition: all .5s ease-in-out;
+	background: var(--color1);
+	content: "";
+	height: 470%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transform: translateX(-100%) translateY(-25%) rotate(45deg);
+	transition: all .5s ease-in-out;
+	width: 140%;
+}
+
+.button:hover:after {
+	-webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+	transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.checkbox-group {
+	color: var(--color1);
+	font-size: 1em;
+	margin-bottom: 1em;
+	position: relative;
+}
+
+.checkbox-group a:hover {
+	border-bottom: 1.5px dotted var(--color2);
+	color: var(--color2);
+}
+
+.checkbox-group a:link {
+	border-bottom: 1.5px dotted var(--color1);
+	color: var(--color1);
+}
+
+.checkbox-group input[type="checkbox"] {
+	cursor: pointer;
+	opacity: 0;
+	position: absolute;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label:after {
+	opacity: 1;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label:before {
+	background-color: transparent;
+}
+
+.checkbox-group label {
+	cursor: pointer;
+	margin-bottom: .5em;
+	padding-left: 2em;
+	position: relative;
+}
+
+.checkbox-group label:after {
+	border: solid var(--color1);
+	border-width: 0 .25em .25em 0;
+	content: "";
+	height: .75em;
+	left: .4em;
+	opacity: 0;
+	position: absolute;
+	top: .16em;
+	transform: rotate(45deg);
+	width: .5em;
+}
+
+.checkbox-group label:before {
+	border: 2px solid var(--color1);
+	border-radius: .25em;
+	content: "";
+	height: 1.25em;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 1.25em;
+}
+
+.column-a {
+	width: 40%;
+}
+
+.column-a,.column-b {
+	float: left;
+	padding: 3em 5% 5%;
+}
+
+.column-b {
+	width: 60%;
+}
+
+.form {
+	padding: 4em 30px 30px;
+}
+
+.group {
+	margin-bottom: 35px;
+	position: relative;
+}
+
+.privacy-label a:hover {
+	border-bottom: 1.5px dotted var(--color2);
+	color: var(--color2);
+	cursor: pointer;
+}
+
+.privacy-label a:link,.privacy-label a:visited {
+	border-bottom: 1.5px dotted var(--color1);
+	color: var(--color1);
+}
+
+.row:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+body {
+	background-color: var(--color2);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+}
+
+fieldset {
+	background-color: rgba(250,250,250,0.2);
+	border: none;
+	box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+input.zoom {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid var(--color2);
+	color: var(--white);
+	display: block;
+	font-size: 18px;
+	outline: none;
+	padding: 10px 10px 10px 5px;
+	width: 100%;
+}
+
+input.zoom:focus ~ .bar:before,input.zoom:focus ~ .bar:after {
+	width: 50%;
+}
+
+input.zoom:focus ~ label.zoom,input.zoom:valid ~ label.zoom {
+	color: var(--color2);
+	font-size: 14px;
+	top: -20px;
+}
+
+label.select-label,label.textarea-label,label.privacy-label {
+	color: var(--color1);
+	font-size: 1em;
+}
+
+label.zoom {
+	color: #999;
+	font-size: 18px;
+	font-weight: 400;
+	left: 5px;
+	pointer-events: none;
+	position: absolute;
+	top: 10px;
+	transition: .2s ease all;
+}
+
+legend {
+	-webkit-text-stroke: .02em var(--color1);
+	color: var(--color2);
+	font-family: DendriticVoltage;
+	font-size: 2em;
+}
+
+nav {
+	position: sticky;
+}
+
+option[disabled] {
+	background-color: var(--color2);
+}
+
+select option {
+	background-color: var(--black);
+	color: var(--white);
+}
+
+select,textarea {
+	appearance: none;
+	background: var(--black);
+	border: 0;
+	border-radius: .5em;
+	box-shadow: 0 0 1em 0 rgba(0,0,0,0.2);
+	color: var(--white);
+	cursor: pointer;
+	margin-top: 5px;
+	outline: 0;
+	padding: 1em;
+	width: 100%;
+}
+
+textarea {
+	height: 10em;
+}
+
+@media screen and (max-width: 768px) {
+	.column-a,.column-b {
+		padding: 1.5em 5% 5%;
+		width: 100%;
+	}
+
+	.form {
+		padding: 4em 0 0;
+	}
+
+	button[type="submit"] {
+		width: auto;
+	}
+
+	input[type="text"],input[type="email"],input[type="tel"],select,textarea {
+		width: 100%;
+	}
+}
+
+a:link.links,a:visited.links {
+	color: #819382;
+	font-size: 2em;
+	padding-right: 2%;
+}
+
+a:hover.links {
+	color: var(--color1);
+}
+
+p {
+	color: #819382;
+}

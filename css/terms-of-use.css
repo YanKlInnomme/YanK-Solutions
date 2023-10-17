@@ -1,0 +1,47 @@
+body {
+	background-color: var(--color2);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+}
+
+h1.title {
+	font-family: DendriticVoltage;
+	font-size: 2.5em;
+	line-height: .9;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.2em;
+	margin-bottom: 3em;
+	opacity: .5;
+	text-align: center;
+}
+
+h3 {
+	color: var(--color1);
+	font-family: DendriticVoltage;
+	font-size: 1.8em;
+	margin-top: 1.2em;
+	opacity: .5;
+}
+
+main {
+	color: var(--color1);
+	padding: 6em 50px 50px;
+}
+
+p,li {
+	font-size: 1.1em;
+	margin: 2px 0;
+	text-align: justify;
+}
+
+a:link.links, a:visited.links {
+	border-bottom: 1.5px dotted var(--color1);
+	color: var(--color1);
+}
+
+a:hover.links {
+	border-bottom: 1.5px dotted #819382;
+	color: #819382;
+}

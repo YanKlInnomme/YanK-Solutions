@@ -1,0 +1,93 @@
+.hero-info {
+	left: 5%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 8;
+}
+
+.hero-info h1 {
+	color: var(--white);
+	font-family: "DendriticVoltage";
+	font-size: clamp(3.2rem,10vw,7rem);
+	line-height: clamp(3.2rem,10vw,7rem);
+	text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+	text-transform: uppercase;
+}
+
+.hero-info h2 {
+	font-family: "DendriticVoltage";
+	font-size: clamp(2rem,8vw,5rem);
+	font-weight: 100;
+	line-height: clamp(2rem,8vw,5rem);
+	text-transform: uppercase;
+}
+
+.hero-info h3 {
+	color: var(--color1);
+	font-size: 1.6rem;
+	font-weight: 400;
+	margin-top: 2em;
+	text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.page-wrap {
+	position: relative;
+}
+
+article {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: var(--i);
+}
+
+main {
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	width: 100vw;
+}
+
+@supports (-webkit-text-stroke: 0.05em var(--color1)) {
+	.hero-info h2 {
+		-webkit-text-stroke: .05em var(--color1);
+		color: transparent;
+		text-shadow: none;
+	}
+}
+
+.hero-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
+	height: 100%;
+	width: 100%;
+}
+
+.hi-1 {
+	background-image: url(../images/animation.avif);
+}
+
+.hi-2 {
+	background-image: url(../images/writing.avif);
+}
+
+.hi-3 {
+	background-image: url(../images/formation.avif);
+}
+
+.hi-4 {
+	background-image: url(../images/illustration.avif);
+}
+
+.hi-5 {
+	background-image: url(../images/programming.avif);
+}
+
+.hi-6 {
+	background-image: url(../images/construction.avif);
+}

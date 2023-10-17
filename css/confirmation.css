@@ -1,0 +1,78 @@
+@keyframes heartbeat {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+
+	25% {
+		transform: scale(1.1);
+	}
+
+	50% {
+		transform: scale(1);
+	}
+
+	75% {
+		transform: scale(1.1);
+	}
+}
+
+.round-button {
+	background-color: #3e5854;
+	border: none;
+	border-radius: 50%;
+	color: var(--color1);
+	cursor: pointer;
+	font-size: 20px;
+	height: 50px;
+	opacity: .8;
+	width: 50px;
+}
+
+.round-button:hover {
+	background-color: var(--color1);
+	color: #3e5854;
+}
+
+body {
+	background-color: var(--color2);
+	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+}
+
+h1.title {
+	border-bottom: 7px solid #3e5854;
+	border-radius: 3.5px;
+	border-top: 7px solid #3e5854;
+	display: inline-block;
+	font-family: LemonTuesday;
+	font-size: 6em;
+	opacity: .8;
+}
+
+h1.title:hover {
+	animation: heartbeat 2s infinite;
+}
+
+h2.subtitle {
+	color: #3e5854;
+	font-size: 4em;
+	margin: 15px 0 0;
+	opacity: .8;
+}
+
+main {
+	color: var(--color1);
+	padding: 6em 50px 50px;
+	text-align: center;
+}
+
+p.message {
+	font-family: LemonTuesday;
+	font-size: 2em;
+	margin: 15px 20% 45px;
+	opacity: .8;
+	text-align: justify;
+}
