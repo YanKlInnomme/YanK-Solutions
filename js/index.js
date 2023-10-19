@@ -1,3 +1,38 @@
+let isMicrosoftEdge = /Edge/.test(navigator.userAgent) || /Edg/.test(navigator.userAgent);
+console.log(isMicrosoftEdge);
+
+// Vérifier si le navigateur est Microsoft Edge
+if (isMicrosoftEdge) {
+  // Microsoft Edge détecté, appliquer les images de secours
+
+  // Modifiez les images de fond en utilisant les classes hi-n
+  let hiClasses = [
+    ".hi-1",
+    ".hi-2",
+    ".hi-3",
+    ".hi-4",
+    ".hi-5",
+    ".hi-6"
+  ];
+
+  // Chemins vers les images de secours au format PNG
+  let pngImagePaths = [
+    "./images/animation.png",
+    "./images/writing.png",
+    "./images/formation.png",
+    "./images/illustration.png",
+    "./images/programming.png",
+    "./images/construction.png"
+  ];
+
+  for (let i = 0; i < hiClasses.length; i++) {
+    let element = document.querySelector(hiClasses[i]);
+    if (element) {
+      element.style.backgroundImage = `url(${pngImagePaths[i]})`;
+    }
+  }
+}
+
 let heroImage = document.querySelector(".hero-image");
 let del = 3;
 let i = 1;
