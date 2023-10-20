@@ -170,12 +170,18 @@ const JeuxDeRoles = [
 ];
   
 const cardsContainer = document.getElementById('cards-container');
+const isMicrosoftEdge = /Edge/.test(navigator.userAgent) || /Edg/.test(navigator.userAgent);
+console.log(isMicrosoftEdge);
+
 JeuxDeRoles.forEach((jeu) => {
   const card = document.createElement('div');
   card.classList.add('card');
 
+  const imageFormat = isMicrosoftEdge ? 'jpg' : 'avif';
+  const imageAlt = jeu.titre.replace(/\s/g, '-'); // Utilisez le titre pour créer un texte alternatif
+
   card.innerHTML = `
-    <div class="card__poster"><img src="../images/jdr/${jeu.image}" alt="${jeu.titre}"></div>
+    <div class="card__poster"><img src="../images/jdr/${jeu.image.replace('avif', imageFormat)}" alt="${imageAlt}"></div>
     <div class="card__details">
       <h1 class="card__title">${jeu.titre}</h1>
       <h2 class="card__subtitle">${jeu.sousTitre}</h2>
