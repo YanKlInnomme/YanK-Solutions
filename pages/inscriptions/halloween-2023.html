@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+  <link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="../../favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#0f2f2b">
+  <meta name="msapplication-config" content="../../favicon/browserconfig.xml">
+  <meta name="theme-color" content="#f3f8d8">
+  <link rel="stylesheet" href="../../css/basic.css">
+  <link rel="stylesheet" href="../../css/registrations.css">
+  <title>Inscription Halloween 2023 · YanK Solutions</title>
+</head>
+<body>
+  <nav class="nav">
+    <h1 class="nav__logo"><a href="../../index.html">YanK Solutions</a></h1>
+    <ul class="nav__list">
+      <li class="nav__item burger" id="burger">
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <div class="form">
+      <form action="process-form__registrations.php" method="post">
+        <fieldset class="row"><legend>&ensp;La Fête Est Finie, l'Horreur Commence&ensp;</legend>
+          <div class="column-a">
+            <div class="group group__explanations">
+              <h3><i class="fa-regular fa-calendar"></i> samedi 25 novembre 2023</h3>
+              <h3><i class="fa-regular fa-clock"></i> à partir de 20h30</h3>
+              <h3><i class="fa-solid fa-clock-rotate-left"></i> 3 à 4 heures</h3>
+              <h3><i class="fa-solid fa-users"></i> 2 à 7 personnes</h3>
+              <h4><i class="fa-solid fa-location-pin"></i> Foyer Socio-culturel de Silly-sur-Nied</h4>
+              <h3><i class="fa-solid fa-coins"></i> Gratuit</h3>
+            </div>
+            <div class="group group__explanations">
+              <p>Rejoignez-moi pour une soirée exceptionnelle, que vous soyez un·e vétéran·e du JdR ou un·e novice curieux·se, cette soirée est ouverte à tou·te·s les adultes et jeune·s adultes de plus de 16 ans.</p>
+              <p>Les participant·e·s auront l'occasion de s'immerger dans une histoire palpitante, soit « Rushmore » d'Anthony Yno Combrexelle si le groupe est restreint, ou « Ten Candles » de Stephen Dewey si le groupe est plus conséquent.</p>
+              <p>Réservez dès à présent votre place, car seulement 2 à 7 aventurier·ère·s auront l'opportunité de participer.</p>
+            </div>
+            <div class="group group__explanations">      
+              <h3>Rushmore</h3>
+              <h4>Anthony Yno Combrexelle</h4>
+              <p>Bienvenue dans Rushmore, un shooter original et atypique où vous allez incarner des membres d'une famille de fossoyeurs dans le Texas profond.</p>
+              <p>Vous allez devoir affronter des défis de taille, comme des rednecks amoraux, des armes dotées de conscience et des secrets de famille bien gardés. Mais attention, rien ne sera facile, car vous allez devoir respecter les dernières volontés de votre matriarche. Pour honorer sa mémoire et trouver un sens à votre héritage, vous devrez vous battre avec force, endurer et vous imposer. Alors, êtes-vous prêts à relever le défi et à découvrir ce que Rushmore vous réserve ?</p>
+            </div>
+            <div class="group group__explanations">
+              <h3>Ten Candles</h3>
+              <h4>Stephen Dewey</h4>
+              <p>La nuit est tombée. Le vent hurle à l'extérieur. Vous êtes les derniers survivants de l'humanité, terré·e·s dans un abri précaire. Dehors, les ombres rampent, attendant votre moindre faux pas. La peur vous tenaille. Combien de temps pourrez-vous tenir avant que les ténèbres ne vous engloutissent ?</p>
+              <p>Allumez les dix bougies. Leurs flammes vacillantes sont votre unique rempart face aux horreurs tapies dans l'obscurité. Racontez-nous qui vous êtes, d'où vous venez, ce que vous espériez avant que le monde ne sombre dans les abysses. Confiez-moi vos rêves brisés, vos peurs les plus viscérales.</p>
+              <p>Chaque bougie qui s'éteint annonce la fin d'un espoir, le glas d'une vie. Tant que subsiste la lumière, l'humanité demeure. Mais les ombres se rapprochent inexorablement, affamées de chair et de désespoir.</p>
+              <p>Alors, conteurs et conteuses d'histoires, êtes-vous prêt·e·s à voir s'écrire le crépuscule de votre race ? Saisirez-vous votre destin, ou attendrez-vous la fin dans la terreur ? Le temps presse... Le souffle glacial de la mort caresse déjà votre nuque.</p>
+            </div>
+          </div>
+          <div class="column-b">
+            <div class="group">      
+              <input class="zoom" type="text" required name="prenom">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-user"></i>&ensp;Prénom</label>
+            </div>
+            <div class="group">      
+              <input class="zoom" type="text" required name="nom">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-user"></i>&ensp;Nom</label>
+            </div>
+            <div class="group">
+              <input class="zoom" type="text" pattern="[0-9]*" inputmode="numeric" required name="age">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-user-clock"></i>&ensp;Âge</label>
+            </div>
+            <div class="group">      
+              <input class="zoom" type="tel" pattern="[0-9]*" required name="telephone">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-phone"></i>&ensp;Téléphone</label>
+            </div>
+            <div class="group">      
+              <input class="zoom" type="email" required name="courriel">
+              <span class="bar"></span>
+              <label class="zoom"><i class="fa-solid fa-envelope"></i>&ensp;Courriel</label>
+            </div>
+            <div class="group">
+              <label class="textarea-label"><i class="fa-solid fa-envelope-open-text"></i>&ensp;Informations complémentaires</label>
+              <textarea placeholder="Mettez ici tout ce qui vous semble utile" name="informations"></textarea>
+            </div>
+            <div class="group checkbox-group">
+              <input type="checkbox" name="participation-checkbox" required id="participation-checkbox">
+              <label for="participation-checkbox">Je valide ma participation à la Soirée de Jeux de Rôles "La Fête Est Finie, l'Horreur Commence" et j'en accepte les conditions. Je comprends que cet événement est organisé à des fins de divertissement et de loisir. Je m'engage à respecter les règles et les consignes de l'événement, à traiter les autres participant·e·s avec respect et à contribuer à créer une atmosphère de jeu positive. Je déclare également que je suis conscient·e que le Jeu de Rôles est une activité fictive et créative et je ne tiendrai pas l'organisateur de l'événement responsable des conséquences liées à la narration ou à l'interaction au sein du jeu.</label>
+            </div>
+            <div class="group checkbox-group">
+              <input type="checkbox" name="commercial-checkbox" id="commercial-checkbox">
+              <label for="commercial-checkbox">J'accepte d'être contacté·e ultérieurement pour d'autres événements similaires organisés par YanK Solutions.</label>
+            </div>
+            <div class="group checkbox-group">
+              <input type="checkbox" name="privacy-checkbox" required id="privacy-checkbox">
+              <label for="privacy-checkbox">J'accepte que mes informations soient traitées conformément à la <a target="_blank" href="../../pages/personal-data.html" class="privacy-label">politique de confidentialité</a>.</label>
+              <input type="hidden" name="titre-soiree" value="La Fête Est Finie, l'Horreur Commence">
+            </div>
+            <div class="group">
+              <button class="button" type="submit"><span><i class="fa-solid fa-paper-plane"></i>&ensp;Envoi</span></button>
+            </div>
+            <div class="group">
+              <p>Pour plus de détails ou simplement pour discuter, vous pouvez aussi me contacter sur&nbsp;:</p>
+              <a href="https://discordapp.com/users/yanklinnomme" target="_blank" class="links"><i class="fa-brands fa-discord"></i></a>
+              <a href="https://twitter.com/_YanK_" target="_blank" class="links"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://ludosphere.fr/@YanK" target="_blank" class="links"><i class="fa-brands fa-mastodon"></i></a>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </main>
+  <section class="overlay">
+    <ul class="level-1">
+      <li>
+        <ul class="level-2">
+          <li>
+            <p>Animation sur table&ensp;<i class="fa-solid fa-dice-d20"></i></p>
+            <ul class="level-3">
+              <li><a href="../../pages/what-is-a-role-playing-game.html">Qu'est-ce qu'un Jeu de Rôles ?</a></li>
+              <li><a href="../../pages/what-are-we-playing.html">À quoi joue-t-on ?</a></li>
+              <li><a href="../../pages/services-for-private-customers.html">Prestations aux Particuliers</a></li>
+              <li><a href="../../pages/services-for-local-authorities.html">Prestations aux Collectivités</a></li>
+              <li><a href="../../pages/services-for-company.html">Prestations à l'Entreprise</a></li>
+              <li><a href="../../pages/trade-shows-and-conventions.html">Salons & Conventions</a></li>
+              <li><a href="../../pages/party-agenda.html">Agenda des Parties</a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Écriture&ensp;<i class="fa-solid fa-feather-pointed"></i></p>
+            <ul class="level-3">
+              <li><a href="../../pages/game-system.html">Système de Jeu</a></li>
+              <li><a href="../../pages/game-universe.html">Univers de Jeu</a></li>
+              <li><a href="../../pages/scenario.html">Scénario</a></li>
+              <li><a href="../../pages/background.html">Background</a></li>
+              <li><a href="../../pages/more-writing.html"><i class="fa-solid fa-plus"></i></a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Formation&ensp;<i class="fa-solid fa-graduation-cap"></i></p>
+            <ul class="level-3">
+              <li><a href="../../pages/role-playing-game.html">Jeu de Rôles</a></li>
+              <li><a href="../../pages/computer-science.html">Informatique</a></li>
+              <li><a href="../../pages/programming.html">Programmation</a></li>
+              <li><a href="../../pages/natural-language-processing-systems.html">Systèmes de traitement du langage naturel (NLP)</a></li>
+              <li><a href="../../pages/computer-aided-design.html">Dessin Assisté par Ordinateur</a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Infographie&ensp;<i class="fa-solid fa-draw-polygon"></i></p>
+            <ul class="level-3">
+              <li><a href="../../pages/illustration.html">Illustration</a></li>
+              <li><a href="../../pages/logo.html">Logo</a></li>
+              <li><a href="../../pages/banner.html">Bannière</a></li>
+              <li><a href="../../pages/graphics-set.html">Ensemble graphique</a></li>
+              <li><a href="../../pages/more-infographics.html"><i class="fa-solid fa-plus"></i></a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Programmation&ensp;<i class="fa-solid fa-file-code"></i></p>
+            <ul class="level-3">
+              <li><a href="../../pages/basic-website.html">Site Web basique</a></li>
+              <li><a href="../../pages/professional-website.html">Site Web professionnel</a></li>
+              <li><a href="../../pages/custom-website.html">Site Web sur mesure</a></li>
+              <li><a href="../../pages/e-commerce.html">E-commerce</a></li>
+              <li><a href="../../pages/more-programming.html"><i class="fa-solid fa-plus"></i></a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Construction&ensp;<i class="fa-solid fa-pen-ruler"></i></p>
+            <ul class="level-3">
+              <li><a href="../../pages/building-permit-file.html">Dossier de Permis de Construire</a></li>
+              <li><a href="../../pages/formwork-drawings.html">Plans de Coffrage</a></li>
+              <li><a href="../../pages/reinforcement-drawings.html">Plans de Ferraillage</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul class="level-a">
+          <h3>Ressources</h3>
+          <ul>
+            <li><i class="fa-brands fa-github"></i>&ensp;<a target="_blank" href="https://github.com/YanKlInnomme">Codées sur gitHub</a></li>
+            <li><i class="fa-solid fa-download"></i>&ensp;<a target="_blank" href="https://itch.io/profile/yanklinnomme">Numériques sur ItchIO</a></li>
+            <li><i class="fa-solid fa-book"></i>&ensp;<a target="_blank" href="https://www.lulu.com/fr/spotlight/yank">Physiques sur Lulu</a></li>
+          </ul>
+          <h3>Liens</h3>
+          <ul>
+            <li><i class="fa-brands fa-mastodon"></i>&ensp;<a target="_blank" href="https://ludosphere.fr/@YanK">Ludosphère</a></li>
+            <li><i class="fa-solid fa-play"></i>&ensp;<a target="_blank" href="https://tube.portes-imaginaire.org/c/yank_channel/videos">Archives Numériques Mémorielles</a></li>
+            <li><i class="fa-brands fa-twitch"></i>&ensp;<a target="_blank" href="https://www.twitch.tv/yanklinnomme">Ça part en Live</a></li>
+          </ul>
+          <p><small><i class="fa-solid fa-plus"></i>&ensp;<a target="_blank" href="https://bento.me/y4nk">Autres liens</a></small></p>
+          <h3>À propos de</h3>
+          <ul>
+            <li><i class="fa-solid fa-user"></i>&ensp;<a href="../../pages/my-story.html">Mon histoire</a></li>
+            <li><i class="fa-solid fa-hand-holding-heart"></i>&ensp;<a href="../../pages/my-commitments.html">Mes engagements</a></li>
+            <li><i class="fa-solid fa-heart"></i>&ensp;<a href="../../pages/working-with-me.html">Travailler avec moi</a></li>
+          </ul>
+          <ul>
+            <h3>Informations</h3>
+            <li><i class="fa-solid fa-scale-balanced"></i>&ensp;<a href="../../pages/terms-of-use.html">Mentions légales</a></li>
+            <li><i class="fa-solid fa-handshake"></i>&ensp;<a href="../../pages/service-contracts.html">Contrats de services</a></li>
+            <li><i class="fa-solid fa-magnifying-glass-chart"></i>&ensp;<a href="../../pages/personal-data.html">Données personnelles</a></li>
+          </ul>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <script src="https://kit.fontawesome.com/3289bc472c.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="../../js/basic.js"></script>
+</body>
+</html>

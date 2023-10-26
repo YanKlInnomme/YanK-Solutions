@@ -165,8 +165,23 @@ a:hover.privacy-label {
 }
 
 body {
-	background-color: var(--color2);
-	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+    background-color: var(--color2);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    background-image: url(../images/inscriptions/halloween-2023.png);
+    opacity: 0.25;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1; 
+    background-size: cover;
 }
 
 fieldset {
@@ -282,4 +297,19 @@ a:hover.links {
 
 p {
 	color: #819382;
+}
+
+.group__explanations > p {
+    color: var(--color1);
+    margin-top: 1%;
+}
+
+.group__explanations > h3{
+    color: var(--color2);
+    font-size: 1.5em;
+}
+
+.group__explanations > h4{
+    color: var(--color2);
+    font-size: 1.2em;
 }

@@ -112,8 +112,8 @@ const Prestations = [
     },
     {
       index: "1",
-      backgroundimage: "background: url(../images/prestations/événement-background.png);",
-      image: "événement.png",
+      backgroundimage: "background: url(../images/prestations/evenement-background.png);",
+      image: "evenement.png",
       title: "Événement",
       subtitle: "JdR associatif",
       details: "Vous cherchez à pimenter vos rassemblements associatifs ? Ne cherchez plus ! Offrez à vos membres une expérience unique de Jeux de Rôles lors de votre prochain événement. Laissez-moi vous emmener dans un univers fantastique où l'imagination est la clé. Réservez dès maintenant pour une aventure inoubliable !",
