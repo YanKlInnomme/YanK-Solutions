@@ -166,14 +166,13 @@ const Prestations = [
       morebuttondown: "<i class='fa-solid fa-arrow-down'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-down'></i>",
       morebuttonup: "<i class='fa-solid fa-arrow-up'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-up'></i>",
       row01:
-        `<label><i class='fa-solid fa-user-clock'></i>&ensp;Âge des participant·e·s</label>
+        `<label><i class="fa-solid fa-building"></i>&ensp;Entreprise</label>
           <br>
-        <input type='text' pattern='[0-9]*' min='10' max='99' inputmode='numeric' name='age' id='age1' required>`,
+        <input type='text' name='company' id='company1' required>`,
       row02:
         `<label><i class='fa-solid fa-users'></i>&ensp;Nombre de participant·e·s</label>
           <select name='number-participants' id='number-participants1' required>
-            <option value='' disabled selected>Choisir de 1 à 6 personnes</option>
-            <option value='1'>1 personne</option>
+            <option value='' disabled selected>Choisir de 2 à 6 personnes</option>
             <option value='2'>2 personnes</option>
             <option value='3'>3 personnes</option>
             <option value='4'>4 personnes</option>
@@ -182,17 +181,23 @@ const Prestations = [
           </select>`,
       row03:
         `<label><i class='fa-solid fa-clock'></i>&ensp;Durée de la partie</label>
-          <br>
-        <input type='text' pattern='[0-9]*' inputmode='numeric' name='game-duration' id='game-duration1' required>`,
+        <select name='game-duration' id='game-duration1' required>
+          <option value='' disabled selected>Choisir entre 4 à 8 heures</option>
+          <option value='4'>4h</option>
+          <option value='5'>5h</option>
+          <option value='6'>6h</option>
+          <option value='7'>7h</option>
+          <option value='8'>8h</option>
+        </select>`,
       row04:
-        `<h3 class="radio__h3"><i class='fa-solid fa-feather-pointed'></i>&ensp;Scénario personnalisé</h3>
-        <div id="scenario1">
-        <input type='radio' id='scenario__yes1' name='scenario' value='yes'>
-          <label for='scenario__yes1'>Oui</label>
-        &emsp;
-        <input type='radio' id='scenario__no1' name='scenario'value='no'>
-          <label for='scenario__no1'>Non</label>
-        </div>`,
+          `<h3 class="radio__h3"><i class='fa-solid fa-feather-pointed'></i>&ensp;Atelier personnalisé</h3>
+          <div id="workshop1">
+          <input type='radio' id='workshop__yes1' name='workshop' value='yes'>
+            <label for='workshop__yes1'>Oui</label>
+          &emsp;
+          <input type='radio' id='workshop__no1' name='workshop'value='no'>
+            <label for='workshop__no1'>Non</label>
+          </div>`,
       row05:
         `<h3 class="radio__h3"><i class='fa-solid fa-clock-rotate-left'></i>&ensp;Délai inférieur à 1 mois</h3>
         <div id="deadline1">
@@ -202,23 +207,16 @@ const Prestations = [
         <input type='radio' id='deadline__no1' name='deadline'value='no'>
           <label for='deadline__no1'>Non</label>
         </div>`,
-      row06: 
-        `<button class="geolocation__button" type="button" formnovalidate onclick="getGeolocation(1)"><i class="fa-solid fa-location-dot"></i>&ensp;Vous géolocaliser&nbsp;!</button>
-        <h3 class="geolocation__h3">ou saisir manuellement le lieu de la partie</h3>`,
-      row07: `<input type="hidden" name="gps-coordinates" id="gps-coordinates1" required></input>`,
-      row08:
-        `<label><i class="fa-solid fa-house"></i>&ensp;Adresse</label>
-          <br>
-        <input type="text" name="address" id="address1" required></input>`,
-      row09:
-        `<label><i class="fa-solid fa-house"></i>&ensp;Code postal</label>
-          <br>
-        <input type="text" name="postal-code" id="postal-code1" required></input>`,
-      row10:
-        `<label><i class="fa-solid fa-house"></i>&ensp;Ville</label>
-          <br>
-        <input type="text" name="city" id="city1" required></input>`,
-      row11:
+      row06:
+        `<h3 class="radio__h3"><i class="fa-solid fa-video"></i>&ensp;Partie enregistrée</h3>
+        <div id="recorded-game1">
+        <input type='radio' id='recorded-game__yes1' name='recorded-game' value='yes'>
+          <label for='recorded-game__yes1'>Oui</label>
+        &emsp;
+        <input type='radio' id='recorded-game__no1' name='recorded-game'value='no'>
+          <label for='recorded-game__no1'>Non</label>
+        </div>`,
+      row07:
         `<button class="cost-estimate" type="button" onclick="calcEstimate1()">Estimer le coût</button>
         <table class="additional-form__table">
           <tr>
@@ -227,33 +225,37 @@ const Prestations = [
           </tr>
         </table>
         <button class="card__contact-me"><i class='fa-solid fa-arrow-down'></i>&ensp;Pour me contacter&ensp;<i class='fa-solid fa-arrow-down'></i></button>`,
-      row12: `<input type="hidden" name="overall-estimate" id="overall-estimate1" value="">`,
-      row13:
+      row08: `<input type="hidden" name="overall-estimate" id="overall-estimate1" value="">`,
+      row09:
         `<label><i class="fa-solid fa-user"></i>&ensp;Prénom</label>
           <br>
         <input type="text" name="first-name" required></input>`,
-      row14:
+      row10:
         `<label><i class="fa-solid fa-user"></i>&ensp;Nom</label>
           <br>
         <input type="text" name="name" required></input>`,
-      row15:
+      row11:
         `<label><i class="fa-solid fa-envelope"></i>&ensp;Courriel</label>
           <br>
         <input type="email" name="email" required>`,
-      row16:
+      row12:
         `<label><i class="fa-solid fa-phone"></i>&ensp;Téléphone</label>
           <br>
         <input type="tel" pattern="[0-9]*" name="phone" required>`,
+      row13: ``,
+      row14: ``,
+      row15: ``,
+      row16: ``,
       row17: ``,
       row18: `<button class="card__send-button" id="card__send-button1" type="submit"><i class="fa-solid fa-paper-plane"></i>&ensp;Envoi</button>`,
     },
     {
       index: "2",
-      backgroundimage: "background: url(../images/prestations/initiation-vtt-background.png);",
-      image: "initiation-vtt.png",
-      title: "Initiation",
-      subtitle: "JdR à distance",
-      details: "Vous êtes tenté·e par le Jeu de Rôles mais vous ne savez ni comment ni avec qui&nbsp;? Alors venez découvrir le JdR, dans le confort de votre fauteuil. Grâce à une session d'initiation à distance, apprenez les bases du Jeu de Rôles sans avoir à bouger de chez vous. Je vous guiderai à travers les règles essentielles et nos écrans partagés vous plongeront au cœur de l'action. Préparez clavier et souris pour votre première aventure en ligne&nbsp;!",
+      backgroundimage: "background: url(../images/prestations/);",
+      image: "",
+      title: "Événementiel",
+      subtitle: "JdR à l'entreprise",
+      details: "Transformez vos célébrations d'entreprise en expériences uniques avec une animation de Jeu de Rôles. Que ce soit pour marquer la fin d'une année réussie, pour souhaiter les vœux en début d'année, pour marquer l'arrivée d'un·e collaborateur·rice ou saluer le départ d'un·e autre, le Jeu de Rôles apportera une dimension ludique et mémorable à ces temps forts.",
       boxea: {
         one: {
           style: "font-size: 1.7em;",
@@ -1276,188 +1278,47 @@ const Prestations = [
       alert("Veuillez remplir tous les champs nécessaires.");
     }
   }
-    
+   
   function calcEstimate1() {
     // Récupérer les valeurs des champs
-    var ageField = document.getElementById("age1");
+    var companyField = document.getElementById("company1");
+    var participantsField = document.getElementById("number-participants1");
     var durationField = document.getElementById("game-duration1");
-    var scenarioTitle = document.getElementById("scenario1");
-    var scenarioYes = document.getElementById("scenario__yes1").checked;
-    var scenarioNo = document.getElementById("scenario__no1").checked;
+    var workshopField = document.getElementById("workshop1");
+    var workshoopYes = document.getElementById("workshop__yes1").checked;
+    var workshoopNo = document.getElementById("workshop__no1").checked;
     var deadlineTitle = document.getElementById("deadline1");
     var deadlineYes = document.getElementById("deadline__yes1").checked;
     var deadlineNo = document.getElementById("deadline__no1").checked;
-    var addressField = document.getElementById("address1");
-    var postalCodeField = document.getElementById("postal-code1");
-    var cityField = document.getElementById("city1");
-  
-    // Réinitialiser les classes CSS pour enlever la surbrillance des champs précédemment vides
-    ageField.classList.remove("highlight-empty");
-    durationField.classList.remove("highlight-empty");
-    scenarioTitle.classList.remove("highlight-empty");
-    deadlineTitle.classList.remove("highlight-empty");
-    addressField.classList.remove("highlight-empty");
-    postalCodeField.classList.remove("highlight-empty");
-    cityField.classList.remove("highlight-empty");
-  
-    // Vérifier que les champs nécessaires sont remplis
-    var isFormValid = true;
-  
-    if (ageField.value === "") {
-      ageField.classList.add("highlight-empty");
-      isFormValid = false;
-    }
-    if (durationField.value === "") {
-      durationField.classList.add("highlight-empty");
-      isFormValid = false;
-    }
-    if (!scenarioYes && !scenarioNo) {
-      scenarioTitle.classList.add("highlight-empty");
-      isFormValid = false;
-    }
-    if (!deadlineYes && !deadlineNo) {
-      deadlineTitle.classList.add("highlight-empty");
-      isFormValid = false;
-    }
-    if (addressField.value === "") {
-      addressField.classList.add("highlight-empty");
-      isFormValid = false;
-    }
-    if (postalCodeField.value === "") {
-      postalCodeField.classList.add("highlight-empty");
-      isFormValid = false;
-    }
-    if (cityField.value === "") {
-      cityField.classList.add("highlight-empty");
-      isFormValid = false;
-    }
-  
-    if (isFormValid) {
-      const address = addressField.value;
-      const postalCode = postalCodeField.value;
-      const city = cityField.value;
-  
-      const fullAddress = `${address}, ${postalCode}, ${city}`;
-      console.log(fullAddress);
-  
-      fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${fullAddress}`)
-      .then(response => response.json())
-      .then(data => {
-        if (data.length > 0) {
-          const { lat, lon } = data[0];
-          console.log('Latitude: ' + lat + ', Longitude: ' + lon);
-  
-          const start = "6.3600843,49.1175071";
-          const end = `${lon},${lat}`;
-          console.log(end);
-  
-          const osrmApiUrl = `https://router.project-osrm.org/route/v1/driving/${start};${end}`;
-          console.log('OSRM API URL: ' + osrmApiUrl);
-  
-          fetch(osrmApiUrl)
-            .then(response => response.json())
-            .then(data => {
-              const distance = data.routes[0].distance / 1000;
-              const costPerKm = 0.55;
-              totalCost = distance * costPerKm;
-  
-              console.log('Distance: ' + distance.toFixed(2) + 'km');
-              console.log('One-way Kilometer Cost: ' + totalCost.toFixed(2) + '€');
-              console.log('Total Cost: ' + (2 * totalCost).toFixed(2) + '€');
-  
-              const duration = parseInt(durationField.value);
-              console.log('Duration: ' + duration);
-              const isCustomScenario = scenarioYes;
-              console.log('Custom Scenario: ' + isCustomScenario);
-              const isDeadlineLessThanOneMonth = deadlineYes;
-              console.log('Deadline: ' + isDeadlineLessThanOneMonth);
-  
-              let basePrice = 50; // 50€ par heure
-              let referencePrice = basePrice * duration;
-              console.log('Reference Price: ' + referencePrice);
-              let weightedPrice = referencePrice;
-              if (isCustomScenario && isDeadlineLessThanOneMonth) {
-                weightedPrice = referencePrice * 1.8;
-              } else if (isCustomScenario) {
-                weightedPrice = referencePrice * 1.5;
-              } else if (isDeadlineLessThanOneMonth) {
-                weightedPrice = referencePrice * 1.3;
-              }
-              console.log('Weighted Price: ' + weightedPrice);
-              const totalCostValue = totalCost;
-              console.log('Final Estimate = ' + weightedPrice + ' + 2 * ' + totalCost);
-              const finalEstimation = weightedPrice + (2 * totalCostValue);
-              console.log('Final Estimate: ' + finalEstimation);
-              const estimateBox = document.getElementById("additional-form__boxe-b1");
-              const estimateInput = document.getElementById("overall-estimate1");
-              estimateBox.textContent = Math.ceil(finalEstimation) + "€";
-              estimateInput.value = finalEstimation.toFixed(2) + "€";
-  
-            })
-            .catch(error => {
-              alert('Remplissez tous les champs et/ou vérifier l\'adresse.');
-            });
-  
-        } else {
-          console.log('Address not found');
-        }
-      })
-      .catch(error => {
-        console.error('Request error:', error);
-        console.log('An error occurred.');
-      });
+    var recordedGameTitle = document.getElementById("recorded-game1");
+    var recordedGameYes = document.getElementById("recorded-game__yes1").checked;
+    var recordedGameNo = document.getElementById("recorded-game__no1").checked;
       
-    } else { 
-      alert("Veuillez remplir tous les champs nécessaires.");
-    }
-  }
-  
-  function calcEstimate2() {
-    // Récupérer les valeurs des champs
-    var ageField = document.getElementById("age2");
-    var participantsField = document.getElementById("number-participants2");
-    var durationTitle = document.getElementById("game-duration2");
-    var duration3 = document.getElementById("game-duration__three2").checked;
-    var duration4 = document.getElementById("game-duration__four2").checked;
-    var scenarioTitle = document.getElementById("scenario2");
-    var scenarioYes = document.getElementById("scenario__yes2").checked;
-    var scenarioNo = document.getElementById("scenario__no2").checked;
-    var deadlineTitle = document.getElementById("deadline2");
-    var deadlineYes = document.getElementById("deadline__yes2").checked;
-    var deadlineNo = document.getElementById("deadline__no2").checked;
-    var recordedGameTitle = document.getElementById("recorded-game2");
-    var recordedGameYes = document.getElementById("recorded-game__yes2").checked;
-    var recordedGameNo = document.getElementById("recorded-game__no2").checked;
-    var privateGameTitle = document.getElementById("private-game2");
-    var privateGameYes = document.getElementById("private-game__yes2").checked;
-    var privateGameNo = document.getElementById("private-game__no2").checked;
-  
     // Réinitialiser les classes CSS pour enlever la surbrillance des champs précédemment vides
-    ageField.classList.remove("highlight-empty");
+    companyField.classList.remove("highlight-empty");
     participantsField.classList.remove("highlight-empty");
-    durationTitle.classList.remove("highlight-empty");
-    scenarioTitle.classList.remove("highlight-empty");
+    durationField.classList.remove("highlight-empty");
+    workshopField.classList.remove("highlight-empty");
     deadlineTitle.classList.remove("highlight-empty");
     recordedGameTitle.classList.remove("highlight-empty");
-    privateGameTitle.classList.remove("highlight-empty");
   
     // Vérifier que les champs nécessaires sont remplis
     var isFormValid = true;
   
-    if (ageField.value === "") {
-      ageField.classList.add("highlight-empty");
+    if (companyField.value === "") {
+      companyField.classList.add("highlight-empty");
       isFormValid = false;
     }
     if (participantsField.value === "") {
       participantsField.classList.add("highlight-empty");
       isFormValid = false;
     }
-    if (!duration3 && !duration4) {
-      durationTitle.classList.add("highlight-empty");
+    if (durationField.value === "") {
+      durationField.classList.add("highlight-empty");
       isFormValid = false;
     }
-    if (!scenarioYes && !scenarioNo) {
-      scenarioTitle.classList.add("highlight-empty");
+    if (!workshoopYes && !workshoopNo) {
+      workshopField.classList.add("highlight-empty");
       isFormValid = false;
     }
     if (!deadlineYes && !deadlineNo) {
@@ -1468,76 +1329,43 @@ const Prestations = [
       recordedGameTitle.classList.add("highlight-empty");
       isFormValid = false;
     }
-    if (!privateGameYes && !privateGameNo) {
-      privateGameTitle.classList.add("highlight-empty");
-      isFormValid = false;
-    }
   
     if (isFormValid) {
-      var age = parseInt(ageField.value);
-      console.log('Age: ' + age);
-      var duration;
-        if (duration3) {
-          duration = 3;
-        } else if (duration4) {
-          duration = 4;
-        }
-      console.log('Duration: ' + duration);
       const participants = parseInt(participantsField.value);
       console.log('Participants: ' + participants);
-      const isCustomScenario = scenarioYes;
-      console.log('Custom Scenario: ' + isCustomScenario);
+      const duration = parseInt(durationField.value);
+      console.log('Duration: ' + duration);
+      const isWorkshop = workshoopYes;
+      console.log('Workshop: ' + isWorkshop);
       const isDeadlineLessThanOneMonth = deadlineYes;
       console.log('Deadline: ' + isDeadlineLessThanOneMonth);
       const isRecordedGame = recordedGameYes;
       console.log('Recorded Game: ' + isRecordedGame);
-      const isPrivateGame = privateGameYes;
-      console.log('Private Game: ' + isPrivateGame);
-  
-      let basePrice = 10; // 10€ par heure et par personne
+
+      let basePrice = 12; // 12€ par heure et par personne
       let referencePrice = basePrice * duration * participants;
       console.log('Reference Price: ' + referencePrice);
       let weightedPrice = referencePrice;
-      if (isCustomScenario && isDeadlineLessThanOneMonth && isRecordedGame && isPrivateGame) {
-        weightedPrice = referencePrice * 1.8; // 50% + 30% - 10% + 10% = 80% 
-      } else if (isCustomScenario && isDeadlineLessThanOneMonth && isRecordedGame) {
-        weightedPrice = referencePrice * 1.7; // 50% + 30% - 10% = 70%
-      } else if (isCustomScenario && isDeadlineLessThanOneMonth && isPrivateGame) {
-        weightedPrice = referencePrice * 1.9; // 50% + 30% + 10% = 90%
-      } else if (isCustomScenario && isDeadlineLessThanOneMonth) {
+      if (isWorkshop && isDeadlineLessThanOneMonth && isRecordedGame) {
+        weightedPrice = referencePrice * 1.7; // 50% + 30% - 10% = 70% 
+      } else if (isWorkshop && isDeadlineLessThanOneMonth) {
         weightedPrice = referencePrice * 1.8; // 50% + 30% = 80%
-      } else if (isCustomScenario && isRecordedGame && isPrivateGame) {
-        weightedPrice = referencePrice * 1.5; // 50% - 10% + 10% = 50%
-      } else if (isCustomScenario && isRecordedGame) {
+      } else if (isWorkshop && isRecordedGame) {
         weightedPrice = referencePrice * 1.4; // 50% - 10% = 40%
-      } else if (isCustomScenario && isPrivateGame) {
-        weightedPrice = referencePrice * 1.6; // 50% + 10% = 60%
-      } else if (isCustomScenario) {
+      } else if (isWorkshop) {
         weightedPrice = referencePrice * 1.5; // 50%
-      } else if (isDeadlineLessThanOneMonth && isRecordedGame && isPrivateGame) {
-        weightedPrice = referencePrice * 1.3; // 30% - 10% + 10% = 30%
       } else if (isDeadlineLessThanOneMonth && isRecordedGame) {
         weightedPrice = referencePrice * 1.2; // 30% - 10% = 20%
-      } else if (isDeadlineLessThanOneMonth && isPrivateGame) {
-        weightedPrice = referencePrice * 1.4; // 30% + 10% = 40%
       } else if (isDeadlineLessThanOneMonth) {
         weightedPrice = referencePrice * 1.3; // 30%
-      } else if (isRecordedGame && isPrivateGame) {
-        weightedPrice = referencePrice; // -10% + 10% = 0%
       } else if (isRecordedGame) {
         weightedPrice = referencePrice * 0.9; // -10%
-      } else if (isPrivateGame) {
-        weightedPrice = referencePrice * 1.1; // +10%
-      }
+      } 
       console.log('Weighted Price: ' + weightedPrice);
-      if (age >= 10 && age <= 16) {
-        weightedPrice = weightedPrice * 0.8; // Réduction de 20% pour les enfants de 10 à 16 ans inclus
-      }
-      console.log('Weighted Price (with discount for children aged 10 to 16 inclusive): ' + weightedPrice);
       const finalEstimation = weightedPrice;
       console.log('Final Estimate: ' + finalEstimation);
-      const estimateBox = document.getElementById("additional-form__boxe-b2");
-      const estimateInput = document.getElementById("overall-estimate2");
+      const estimateBox = document.getElementById("additional-form__boxe-b1");
+      const estimateInput = document.getElementById("overall-estimate1");
       estimateBox.textContent = Math.ceil(finalEstimation) + "€";
       estimateInput.value = finalEstimation.toFixed(2) + "€";
     } else {
