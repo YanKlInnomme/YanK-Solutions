@@ -251,75 +251,77 @@ const Prestations = [
     },
     {
       index: "2",
-      backgroundimage: "background: url(../images/prestations/);",
-      image: "",
+      backgroundimage: "background: url(../images/prestations/company-evenementiel-background.avif);",
+      image: "company-evenementiel.avif",
       title: "Événementiel",
       subtitle: "JdR à l'entreprise",
       details: "Transformez vos célébrations d'entreprise en expériences uniques avec une animation de Jeu de Rôles. Que ce soit pour marquer la fin d'une année réussie, pour souhaiter les vœux en début d'année, pour marquer l'arrivée d'un·e collaborateur·rice ou saluer le départ d'un·e autre, le Jeu de Rôles apportera une dimension ludique et mémorable à ces temps forts.",
       boxea: {
-        one: {
-          style: "font-size: 1.7em;",
-          content: "10-99"
-        },
-        two: {
-          style: "",
-          content: "Âge"
-        }
-      },
-      boxeb: {
         one: {
           style: "font-size: 1.3em;",
           content: "<i class='fa-solid fa-clock'></i>"
         },
         two: {
           style: "font-size: 1.3em;",
-          content: "3 ou 4h"
+          content: "4 à 8h"
+        }      },
+      boxeb: {
+        one: {
+          style: "font-size: 1.7em;",
+          content: "3-10"
+        },
+        two: {
+          style: "",
+          content: "<i class='fa-solid fa-users'></i>"
         }
       },
       boxec: {
         one: {
           style: "font-size: 1.7em;",
-          content: "280€*"
+          content: "90€*"
         },
         two: {
           style: "",
-          content: "/h/<i class='fa-solid fa-users'></i>"
+          content: "/h"
         }
       },
       morebuttondown: "<i class='fa-solid fa-arrow-down'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-down'></i>",
       morebuttonup: "<i class='fa-solid fa-arrow-up'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-up'></i>",
       row01:
-        `<label><i class='fa-solid fa-user-clock'></i>&ensp;Âge des participant·e·s</label>
+        `<label><i class="fa-solid fa-building"></i>&ensp;Entreprise</label>
           <br>
-        <input type='text' pattern='[0-9]*' min='10' max='99' inputmode='numeric' name='age' id='age2' required>`,
+        <input type='text' name='company' id='company2' required>`,
       row02:
         `<label><i class='fa-solid fa-users'></i>&ensp;Nombre de participant·e·s</label>
           <select name='number-participants' id='number-participants2' required>
-            <option value='' disabled selected>Choisir de 1 à 6 personnes</option>
-            <option value='1'>1 personne</option>
-            <option value='2'>2 personnes</option>
+            <option value='' disabled selected>Choisir de 3 à 10 personnes</option>
             <option value='3'>3 personnes</option>
             <option value='4'>4 personnes</option>
             <option value='5'>5 personnes</option>
             <option value='6'>6 personnes</option>
+            <option value='7'>7 personnes</option>
+            <option value='8'>8 personnes</option>
+            <option value='9'>9 personnes</option>
+            <option value='10'>10 personnes</option>
           </select>`,
       row03:
-        `<h3 class="radio__h3"><i class='fa-solid fa-clock'></i>&ensp;Durée de la partie</h3>
-        <div id="game-duration2">
-        <input type='radio' id='game-duration__three2' name='game-duration' value='3'>
-          <label for='game-duration__three2'>3h</label>
-        &emsp;
-        <input type='radio' id='game-duration__four2' name='game-duration'value='4'>
-          <label for='game-duration__four2'>4h</label>
-        </div>`,
+        `<label><i class='fa-solid fa-clock'></i>&ensp;Durée de la partie</label>
+        <select name='game-duration' id='game-duration2' required>
+          <option value='' disabled selected>Choisir entre 4 à 8 heures</option>
+          <option value='4'>4h</option>
+          <option value='5'>5h</option>
+          <option value='6'>6h</option>
+          <option value='7'>7h</option>
+          <option value='8'>8h</option>
+        </select>`,
       row04:
-        `<h3 class="radio__h3"><i class='fa-solid fa-feather-pointed'></i>&ensp;Scénario personnalisé</h3>
-        <div id="scenario2">
-        <input type='radio' id='scenario__yes2' name='scenario' value='yes'>
-          <label for='scenario__yes2'>Oui</label>
+        `<h3 class="radio__h3"><i class='fa-solid fa-feather-pointed'></i>&ensp;Atelier personnalisé</h3>
+        <div id="workshop2">
+        <input type='radio' id='workshop__yes2' name='workshop' value='yes'>
+          <label for='workshop__yes2'>Oui</label>
         &emsp;
-        <input type='radio' id='scenario__no2' name='scenario'value='no'>
-          <label for='scenario__no2'>Non</label>
+        <input type='radio' id='workshop__no2' name='workshop'value='no'>
+          <label for='workshop__no2'>Non</label>
         </div>`,
       row05:
         `<h3 class="radio__h3"><i class='fa-solid fa-clock-rotate-left'></i>&ensp;Délai inférieur à 1 mois</h3>
@@ -331,24 +333,22 @@ const Prestations = [
           <label for='deadline__no2'>Non</label>
         </div>`,
       row06:
-        `<h3 class="radio__h3"><i class="fa-solid fa-video"></i>&ensp;Partie enregistrée</h3>
-        <div id="recorded-game2">
-        <input type='radio' id='recorded-game__yes2' name='recorded-game' value='yes'>
-          <label for='recorded-game__yes2'>Oui</label>
-        &emsp;
-        <input type='radio' id='recorded-game__no2' name='recorded-game'value='no'>
-          <label for='recorded-game__no2'>Non</label>
-        </div>`,
-      row07:
-        `<h3 class="radio__h3"><i class="fa-solid fa-people-roof"></i>&ensp;Partie privée</h3>
-        <div id="private-game2">
-        <input type='radio' id='private-game__yes2' name='private-game' value='yes'>
-          <label for='private-game__yes2'>Oui</label>
-        &emsp;
-        <input type='radio' id='private-game__no2' name='private-game'value='no'>
-          <label for='private-game__no2'>Non</label>
-        </div>`,
+        `<button class='geolocation__button' type='button' formnovalidate onclick='getGeolocation(2)'><i class='fa-solid fa-location-dot'></i>&ensp;Vous géolocaliser&nbsp;!</button>
+        <h3 class='geolocation__h3'>ou saisir manuellement le lieu de l'atelier</h3>`,
+      row07: `<input type='hidden' name='gps-coordinates' id='gps-coordinates2' required></input>`,
       row08:
+        `<label><i class='fa-solid fa-house'></i>&ensp;Adresse</label>
+          <br>
+        <input type='text' name='address' id='address2' required></input>`,
+      row09:
+        `<label><i class='fa-solid fa-house'></i>&ensp;Code postal</label>
+          <br>
+        <input type='text' name='postal-code' id='postal-code2' required></input>`,
+      row10:
+        `<label><i class='fa-solid fa-house'></i>&ensp;Ville</label>
+          <br>
+        <input type='text' name='city' id='city2' required></input>`,
+      row11:
         `<button class="cost-estimate" type="button" onclick="calcEstimate2()">Estimer le coût</button>
         <table class="additional-form__table">
           <tr>
@@ -357,568 +357,26 @@ const Prestations = [
           </tr>
         </table>
         <button class="card__contact-me"><i class='fa-solid fa-arrow-down'></i>&ensp;Pour me contacter&ensp;<i class='fa-solid fa-arrow-down'></i></button>`,
-      row09: `<input type="hidden" name="overall-estimate" id="overall-estimate2" value="">`,
-      row10:
+      row12: `<input type="hidden" name="overall-estimate" id="overall-estimate2" value="">`,
+      row13:
         `<label><i class="fa-solid fa-user"></i>&ensp;Prénom</label>
           <br>
         <input type="text" name="first-name" required></input>`,
-      row11:
+      row14:
         `<label><i class="fa-solid fa-user"></i>&ensp;Nom</label>
           <br>
         <input type="text" name="name" required></input>`,
-      row12:
+      row15:
         `<label><i class="fa-solid fa-envelope"></i>&ensp;Courriel</label>
           <br>
         <input type="email" name="email" required>`,
-      row13:
+      row16:
         `<label><i class="fa-solid fa-phone"></i>&ensp;Téléphone</label>
           <br>
         <input type="tel" pattern="[0-9]*" name="phone" required>`,
-      row14: ``,
-      row15: ``,
-      row16: ``,
       row17: ``,
       row18: `<button class="card__send-button" id="card__send-button2" type="submit"><i class="fa-solid fa-paper-plane"></i>&ensp;Envoi</button>`,
-    },
-    {
-      index: "3",
-      backgroundimage: "background: url(../images/prestations/one-shot-background.png);",
-      image: "one-shot.png",
-      title: "One-shot",
-      subtitle: "JdR à domicile",
-      details: "Prêt à vivre une aventure intense en une seule soirée&nbsp;? Le One-shot offre une expérience complète en une seule séance ou deux, où chaque choix compte et chaque moment est rempli de suspense. Prenez les rênes d'un personnage prêt à vivre une histoire palpitante, explorez des mondes fantastiques, résolvez des mystères énigmatiques et forgez des liens avec d'autres, le tout en quelques heures.",
-      boxea: {
-        one: {
-          style: "font-size: 1.3em;",
-          content: "<i class='fa-solid fa-clock'></i>"
-        },
-        two: {
-          style: "font-size: 1.3em;",
-          content: "4 à 10h"
-        }
-      },
-      boxeb: {
-        one: {
-          style: "font-size: 1.7em;",
-          content: "2-6"
-        },
-        two: {
-          style: "",
-          content: "<i class='fa-solid fa-users'></i>"
-        }
-      },
-      boxec: {
-        one: {
-          style: "font-size: 1.7em;",
-          content: "55€*"
-        },
-        two: {
-          style: "",
-          content: "/h"
-        }
-      },
-      morebuttondown: "<i class='fa-solid fa-arrow-down'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-down'></i>",
-      morebuttonup: "<i class='fa-solid fa-arrow-up'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-up'></i>",
-      row01:
-        `<label><i class='fa-solid fa-user-clock'></i>&ensp;Âge des participant·e·s</label>
-          <br>
-        <input type='text' pattern='[0-9]*' min='10' max='99' inputmode='numeric' name='age' id='age3' required>`,
-      row02:
-        `<label><i class='fa-solid fa-users'></i>&ensp;Nombre de participant·e·s</label>
-        <select name='number-participants' id='number-participants3' required>
-          <option value='' disabled selected>Choisir entre 2 à 6 personnes</option>
-          <option value='2'>2 personnes</option>
-          <option value='3'>3 personnes</option>
-          <option value='4'>4 personnes</option>
-          <option value='5'>5 personnes</option>
-          <option value='6'>6 personnes</option>
-        </select>`,
-      row03:
-        `<label><i class='fa-solid fa-clock'></i>&ensp;Durée de la partie</label>
-        <select name='game-duration' id='game-duration3' required>
-          <option value='' disabled selected>Choisir entre 4 à 10 heures</option>
-          <option value='4'>4h</option>
-          <option value='5'>5h</option>
-          <option value='6'>6h</option>
-          <option value='7'>7h</option>
-          <option value='8'>8h</option>
-          <option value='9'>9h</option>
-          <option value='10'>10h</option>
-        </select>`,
-      row04:
-        `<h3 class="radio__h3"><i class='fa-solid fa-feather-pointed'></i>&ensp;Scénario personnalisé</h3>
-        <div id="scenario3">
-        <input type='radio' id='scenario__yes3' name='scenario' value='yes'>
-          <label for='scenario__yes3'>Oui</label>
-        &emsp;
-        <input type='radio' id='scenario__no3' name='scenario'value='no'>
-          <label for='scenario__no3'>Non</label>
-        </div>`,
-      row05:
-        `<h3 class="radio__h3"><i class='fa-solid fa-clock-rotate-left'></i>&ensp;Délai inférieur à 1 mois</h3>
-        <div id="deadline3">
-        <input type='radio' id='deadline__yes3' name='deadline' value='yes'>
-          <label for='deadline__yes3'>Oui</label>
-        &emsp;
-        <input type='radio' id='deadline__no3' name='deadline'value='no'>
-          <label for='deadline__no3'>Non</label>
-        </div>`,
-      row06:
-        `<button class='geolocation__button' type='button' formnovalidate onclick='getGeolocation(3)'><i class='fa-solid fa-location-dot'></i>&ensp;Vous géolocaliser&nbsp;!</button>
-        <h3 class='geolocation__h3'>ou saisir manuellement le lieu de la partie</h3>`,
-      row07: `<input type='hidden' name='gps-coordinates' id='gps-coordinates3' required></input>`,
-      row08:
-        `<label><i class='fa-solid fa-house'></i>&ensp;Adresse</label>
-          <br>
-        <input type='text' name='address' id='address3' required></input>`,
-      row09:
-        `<label><i class='fa-solid fa-house'></i>&ensp;Code postal</label>
-          <br>
-        <input type='text' name='postal-code' id='postal-code3' required></input>`,
-      row10:
-        `<label><i class='fa-solid fa-house'></i>&ensp;Ville</label>
-          <br>
-        <input type='text' name='city' id='city3' required></input>`,
-      row11:
-        `<button class='cost-estimate' type='button' onclick='calcEstimate3()'>Estimer le coût</button>
-        <table class="additional-form__table">
-          <tr>
-            <td class="additional-form__boxe-a"><i class="fa-solid fa-coins"></i>&ensp;Estimation globale</td>
-            <td class="additional-form__boxe-b" id="additional-form__boxe-b3">-&nbsp;€</td>
-          </tr>
-        </table>
-        <button class="card__contact-me"><i class='fa-solid fa-arrow-down'></i>&ensp;Pour me contacter&ensp;<i class='fa-solid fa-arrow-down'></i></button>`,
-      row12: `<input type="hidden" name="overall-estimate" id="overall-estimate3" value="">`,
-      row13:
-        `<label><i class="fa-solid fa-user"></i>&ensp;Prénom</label>
-          <br>
-        <input type="text" name="first-name" required></input>`,
-      row14:
-        `<label><i class="fa-solid fa-user"></i>&ensp;Nom</label>
-          <br>
-        <input type="text" name="name" required></input>`,
-      row15:
-        `<label><i class="fa-solid fa-envelope"></i>&ensp;Courriel</label>
-          <br>
-        <input type="email" name="email" required>`,
-      row16:
-        `<label><i class="fa-solid fa-phone"></i>&ensp;Téléphone</label>
-          <br>
-        <input type="tel" pattern="[0-9]*" name="phone" required>`,
-      row17: ``,
-      row18: `<button class="card__send-button" id="card__send-button3" type="submit"><i class="fa-solid fa-paper-plane"></i>&ensp;Envoi</button>`,
-    },
-    {
-      index: "4",
-      backgroundimage: "background: url(../images/prestations/one-shot-vtt-background.png);",
-      image: "one-shot-vtt.png",
-      title: "One-shot",
-      subtitle: "JdR à distance",
-      details: "Préparez-vous à une aventure épique en ligne&nbsp;! En une seule séance ou deux, plongez dans un monde riche en mystères et décisions cruciales. Laissez-moi vous guider à travers une expérience immersive, où votre personnage unique vivra une histoire palpitante. Réservez maintenant pour une expérience de Jeu de Rôles unique&nbsp;!",
-      boxea: {
-        one: {
-          style: "font-size: 1.3em;",
-          content: "<i class='fa-solid fa-clock'></i>"
-        },
-        two: {
-          style: "font-size: 1.3em;",
-          content: "4 à 10h"
-        }
-      },
-      boxeb: {
-        one: {
-          style: "font-size: 1.7em;",
-          content: "2-6"
-        },
-        two: {
-          style: "",
-          content: "<i class='fa-solid fa-users'></i>"
-        }
-      },
-      boxec: {
-        one: {
-          style: "font-size: 1.7em;",
-          content: "7€*"
-        },
-        two: {
-          style: "",
-          content: "/h/<i class='fa-solid fa-users'></i>"
-        }
-      },
-      morebuttondown: "<i class='fa-solid fa-arrow-down'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-down'></i>",
-      morebuttonup: "<i class='fa-solid fa-arrow-up'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-up'></i>",
-      row01:
-        `<label><i class='fa-solid fa-user-clock'></i>&ensp;Âge des participant·e·s</label>
-          <br>
-        <input type='text' pattern='[0-9]*' min='10' max='99' inputmode='numeric' name='age' id='age4' required>`,
-      row02:
-        `<label><i class='fa-solid fa-users'></i>&ensp;Nombre de participant·e·s</label>
-        <select name='number-participants' id='number-participants4' required>
-          <option value='' disabled selected>Choisir entre 1 à 6 personnes</option>
-          <option value='1'>1 personne</option>
-          <option value='2'>2 personnes</option>
-          <option value='3'>3 personnes</option>
-          <option value='4'>4 personnes</option>
-          <option value='5'>5 personnes</option>
-          <option value='6'>6 personnes</option>
-        </select>`,
-      row03:
-        `<label><i class='fa-solid fa-clock'></i>&ensp;Durée de la partie</label>
-        <select name='game-duration' id='game-duration4' required>
-          <option value='' disabled selected>Choisir entre 4 à 10 heures</option>
-          <option value='4'>4h</option>
-          <option value='5'>5h</option>
-          <option value='6'>6h</option>
-          <option value='7'>7h</option>
-          <option value='8'>8h</option>
-          <option value='9'>9h</option>
-          <option value='10'>10h</option>
-        </select>`,
-        row04:
-        `<h3 class="radio__h3"><i class='fa-solid fa-feather-pointed'></i>&ensp;Scénario personnalisé</h3>
-        <div id="scenario4">
-        <input type='radio' id='scenario__yes4' name='scenario' value='yes'>
-          <label for='scenario__yes4'>Oui</label>
-        &emsp;
-        <input type='radio' id='scenario__no4' name='scenario'value='no'>
-          <label for='scenario__no4'>Non</label>
-        </div>`,
-      row05:
-        `<h3 class="radio__h3"><i class='fa-solid fa-clock-rotate-left'></i>&ensp;Délai inférieur à 1 mois</h3>
-        <div id="deadline4">
-        <input type='radio' id='deadline__yes4' name='deadline' value='yes'>
-          <label for='deadline__yes4'>Oui</label>
-        &emsp;
-        <input type='radio' id='deadline__no4' name='deadline'value='no'>
-          <label for='deadline__no4'>Non</label>
-        </div>`,
-      row06:
-        `<h3 class="radio__h3"><i class="fa-solid fa-video"></i>&ensp;Partie enregistrée</h3>
-        <div id="recorded-game4">
-        <input type='radio' id='recorded-game__yes4' name='recorded-game' value='yes'>
-          <label for='recorded-game__yes4'>Oui</label>
-        &emsp;
-        <input type='radio' id='recorded-game__no4' name='recorded-game'value='no'>
-          <label for='recorded-game__no4'>Non</label>
-        </div>`,
-      row07:
-        `<h3 class="radio__h3"><i class="fa-solid fa-people-roof"></i>&ensp;Partie privée</h3>
-        <div id="private-game4">
-        <input type='radio' id='private-game__yes4' name='private-game' value='yes'>
-          <label for='private-game__yes4'>Oui</label>
-        &emsp;
-        <input type='radio' id='private-game__no4' name='private-game'value='no'>
-          <label for='private-game__no4'>Non</label>
-        </div>`,
-      row08:
-        `<button class="cost-estimate" type="button" onclick="calcEstimate4()">Estimer le coût</button>
-        <table class="additional-form__table">
-          <tr>
-            <td class="additional-form__boxe-a"><i class="fa-solid fa-coins"></i>&ensp;Estimation globale</td>
-            <td class="additional-form__boxe-b" id="additional-form__boxe-b4">-&nbsp;€</td>
-          </tr>
-        </table>
-        <button class="card__contact-me"><i class='fa-solid fa-arrow-down'></i>&ensp;Pour me contacter&ensp;<i class='fa-solid fa-arrow-down'></i></button>`,
-      row09: `<input type="hidden" name="overall-estimate" id="overall-estimate4" value="">`,
-      row10:
-        `<label><i class="fa-solid fa-user"></i>&ensp;Prénom</label>
-          <br>
-        <input type="text" name="first-name" required></input>`,
-      row11:
-        `<label><i class="fa-solid fa-user"></i>&ensp;Nom</label>
-          <br>
-        <input type="text" name="name" required></input>`,
-      row12:
-        `<label><i class="fa-solid fa-envelope"></i>&ensp;Courriel</label>
-          <br>
-        <input type="email" name="email" required>`,
-      row13:
-        `<label><i class="fa-solid fa-phone"></i>&ensp;Téléphone</label>
-          <br>
-        <input type="tel" pattern="[0-9]*" name="phone" required>`,
-      row14: ``,
-      row15: ``,
-      row16: ``,
-      row17: ``,
-      row18: `<button class="card__send-button" id="card__send-button4" type="submit"><i class="fa-solid fa-paper-plane"></i>&ensp;Envoi</button>`,
-    },
-    {
-      index: "5",
-      backgroundimage: "background: url(../images/prestations/campagne-background.png);",
-      image: "campagne.png",
-      title: "Campagne",
-      subtitle: "JdR à domicile",
-      details: "Prêt·e pour une aventure épique qui s'étend sur plusieurs séances&nbsp;? Rejoignez-moi pour une immersion totale dans un univers riche en intrigues, en personnages fascinants et en défis épiques. Créez une histoire unique avec votre groupe de joueuses et joueurs. Réservez maintenant pour une aventure inoubliable&nbsp;!",
-      boxea: {
-        one: {
-          style: "font-size: 1.7em;",
-          content: "6+"
-        },
-        two: {
-          style: "",
-          content: "Sessions"
-        }
-      },
-      boxeb: {
-        one: {
-          style: "font-size: 1.3em;",
-          content: "<i class='fa-solid fa-clock'></i>"
-        },
-        two: {
-          style: "font-size: 1.3em;",
-          content: "3 à 6h"
-        }
-      },
-      boxec: {
-        one: {
-          style: "font-size: 1.7em;",
-          content: "60€*"
-        },
-        two: {
-          style: "",
-          content: "/h"
-        }
-      },
-      morebuttondown: "<i class='fa-solid fa-arrow-down'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-down'></i>",
-      morebuttonup: "<i class='fa-solid fa-arrow-up'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-up'></i>",
-      row01:
-        `<label><i class='fa-solid fa-user-clock'></i>&ensp;Âge des participant·e·s</label>
-          <br>
-        <input type='text' pattern='[0-9]*' min='10' max='99' inputmode='numeric' name='age' id='age5' required>`,
-      row02:
-        `<label><i class='fa-solid fa-users'></i>&ensp;Nombre de participant·e·s</label>
-        <select name='number-participants' id='number-participants5' required>
-          <option value='' disabled selected>Choisir de 2 à 6 personnes</option>
-          <option value='2'>2 personnes</option>
-          <option value='3'>3 personnes</option>
-          <option value='4'>4 personnes</option>
-          <option value='5'>5 personnes</option>
-          <option value='6'>6 personnes</option>
-        </select>`,
-      row03:
-        `<label><i class='fa-solid fa-clock'></i>&ensp;Durée de la session</label>
-        <select name='game-duration' id='game-duration5' required>
-          <option value='' disabled selected>Choisir de 3 à 6 heures</option>
-          <option value='3'>3h</option>
-          <option value='4'>4h</option>
-          <option value='5'>5h</option>
-          <option value='6'>6h</option>
-        </select>`,
-      row04:
-        `<label><i class='fa-solid fa-clock'></i>&ensp;Nombre de sessions</label>
-        <select name='number-sessions' id='number-sessions5' required>
-          <option value='' disabled selected>Choisir de 6 à 12 sessions</option>
-          <option value='6'>6 sessions</option>
-          <option value='7'>7 sessions</option>
-          <option value='8'>8 sessions</option>
-          <option value='9'>9 sessions</option>
-          <option value='10'>10 sessions</option>
-          <option value='11'>11 sessions</option>
-          <option value='12'>12 sessions</option>
-        </select>`,
-      row05:
-        `<h3 class="radio__h3"><i class='fa-solid fa-feather-pointed'></i>&ensp;Scénario personnalisé</h3>
-        <div id="scenario5">
-        <input type='radio' id='scenario__yes5' name='scenario' value='yes'>
-          <label for='scenario__yes5'>Oui</label>
-        &emsp;
-        <input type='radio' id='scenario__no5' name='scenario'value='no'>
-          <label for='scenario__no5'>Non</label>
-        </div>`,
-      row06:
-        `<h3 class="radio__h3"><i class='fa-solid fa-clock-rotate-left'></i>&ensp;Délai inférieur à 1 mois</h3>
-        <div id="deadline5">
-        <input type='radio' id='deadline__yes5' name='deadline' value='yes'>
-          <label for='deadline__yes5'>Oui</label>
-        &emsp;
-        <input type='radio' id='deadline__no5' name='deadline'value='no'>
-          <label for='deadline__no5'>Non</label>
-        </div>`,
-      row07:
-        `<button class='geolocation__button' type='button' formnovalidate onclick='getGeolocation(5)'><i class='fa-solid fa-location-dot'></i>&ensp;Vous géolocaliser&nbsp;!</button>
-        <h3 class='geolocation__h3'>ou saisir manuellement le lieu de la partie</h3>`,
-      row08: `<input type='hidden' name='gps-coordinates' id='gps-coordinates5' required></input>`,
-      row09:
-        `<label><i class='fa-solid fa-house'></i>&ensp;Adresse</label>
-          <br>
-        <input type='text' name='address' id='address5' required></input>`,
-      row10:
-        `<label><i class='fa-solid fa-house'></i>&ensp;Code postal</label>
-          <br>
-        <input type='text' name='postal-code' id='postal-code5' required></input>`,
-      row11:
-        `<label><i class='fa-solid fa-house'></i>&ensp;Ville</label>
-          <br>
-        <input type='text' name='city' id='city5' required></input>`,
-      row12:
-        `<button class='cost-estimate' type='button' onclick='calcEstimate5()'>Estimer le coût</button>
-        <table class="additional-form__table">
-          <tr>
-            <td class="additional-form__boxe-a"><i class="fa-solid fa-coins"></i>&ensp;Estimation globale</td>
-            <td class="additional-form__boxe-b" id="additional-form__boxe-b5">-&nbsp;€</td>
-          </tr>
-        </table>
-        <button class="card__contact-me"><i class='fa-solid fa-arrow-down'></i>&ensp;Pour me contacter&ensp;<i class='fa-solid fa-arrow-down'></i></button>`,
-      row13: `<input type="hidden" name="overall-estimate" id="overall-estimate5" value="">`,
-      row14:
-        `<label><i class="fa-solid fa-user"></i>&ensp;Prénom</label>
-          <br>
-        <input type="text" name="first-name" required></input>`,
-      row15:
-        `<label><i class="fa-solid fa-user"></i>&ensp;Nom</label>
-          <br>
-        <input type="text" name="name" required></input>`,
-      row16:
-        `<label><i class="fa-solid fa-envelope"></i>&ensp;Courriel</label>
-          <br>
-        <input type="email" name="email" required>`,
-      row17:
-        `<label><i class="fa-solid fa-phone"></i>&ensp;Téléphone</label>
-          <br>
-        <input type="tel" pattern="[0-9]*" name="phone" required>`,
-      row18: `<button class="card__send-button" id="card__send-button5" type="submit"><i class="fa-solid fa-paper-plane"></i>&ensp;Envoi</button>`,
-    },
-    {
-      index: "6",
-      backgroundimage: "background: url(../images/prestations/campagne-vtt-background.png);",
-      image: "campagne-vtt.png",
-      title: "Campagne",
-      subtitle: "JdR à distance",
-      details: "Préparez-vous à une aventure épique en ligne&nbsp;! En une seule séance ou deux, plongez dans un monde riche en mystères et décisions cruciales. Laissez-moi vous guider à travers une expérience immersive, où votre personnage unique vivra une histoire palpitante. Réservez maintenant pour une expérience de Jeu de Rôles unique&nbsp;!",
-      boxea: {
-        one: {
-          style: "font-size: 1.7em;",
-          content: "6+"
-        },
-        two: {
-          style: "",
-          content: "Sessions"
-        }
-      },
-      boxeb: {
-        one: {
-          style: "font-size: 1.3em;",
-          content: "<i class='fa-solid fa-clock'></i>"
-        },
-        two: {
-          style: "font-size: 1.3em;",
-          content: "3 à 5h"
-        }
-      },
-      boxec: {
-        one: {
-          style: "font-size: 1.7em;",
-          content: "7€*"
-        },
-        two: {
-          style: "",
-          content: "/h/<i class='fa-solid fa-users'></i>"
-        }
-      },
-      morebuttondown: "<i class='fa-solid fa-arrow-down'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-down'></i>",
-      morebuttonup: "<i class='fa-solid fa-arrow-up'></i>&ensp;Estimation rapide&ensp;<i class='fa-solid fa-arrow-up'></i>",
-      row01:
-        `<label><i class='fa-solid fa-user-clock'></i>&ensp;Âge des participant·e·s</label>
-          <br>
-        <input type='text' pattern='[0-9]*' min='10' max='99' inputmode='numeric' name='age' id='age6' required>`,
-      row02:
-        `<label><i class='fa-solid fa-users'></i>&ensp;Nombre de participant·e·s</label>
-        <select name='number-participants' id='number-participants6' required>
-          <option value='' disabled selected>Choisir entre 1 à 6 personnes</option>
-          <option value='1'>1 personne</option>
-          <option value='2'>2 personnes</option>
-          <option value='3'>3 personnes</option>
-          <option value='4'>4 personnes</option>
-          <option value='5'>5 personnes</option>
-          <option value='6'>6 personnes</option>
-        </select>`,
-      row03:
-        `<label><i class='fa-solid fa-clock'></i>&ensp;Durée de la session</label>
-        <select name='game-duration' id='game-duration6' required>
-          <option value='' disabled selected>Choisir entre 3 à 5 heures</option>
-          <option value='3'>3h</option>
-          <option value='4'>4h</option>
-          <option value='5'>5h</option>
-        </select>`,
-      row04:
-        `<label><i class='fa-solid fa-clock'></i>&ensp;Nombre de sessions</label>
-        <select name='number-sessions' id='number-sessions6' required>
-          <option value='' disabled selected>Choisir de 6 à 12 sessions</option>
-          <option value='6'>6 sessions</option>
-          <option value='7'>7 sessions</option>
-          <option value='8'>8 sessions</option>
-          <option value='9'>9 sessions</option>
-          <option value='10'>10 sessions</option>
-          <option value='11'>11 sessions</option>
-          <option value='12'>12 sessions</option>
-        </select>`,
-      row05:
-        `<h3 class="radio__h3"><i class='fa-solid fa-feather-pointed'></i>&ensp;Scénario personnalisé</h3>
-        <div id="scenario6">
-        <input type='radio' id='scenario__yes6' name='scenario' value='yes'>
-          <label for='scenario__yes6'>Oui</label>
-        &emsp;
-        <input type='radio' id='scenario__no6' name='scenario'value='no'>
-          <label for='scenario__no6'>Non</label>
-        </div>`,
-      row06:
-        `<h3 class="radio__h3"><i class='fa-solid fa-clock-rotate-left'></i>&ensp;Délai inférieur à 1 mois</h3>
-        <div id="deadline6">
-        <input type='radio' id='deadline__yes6' name='deadline' value='yes'>
-          <label for='deadline__yes6'>Oui</label>
-        &emsp;
-        <input type='radio' id='deadline__no6' name='deadline'value='no'>
-          <label for='deadline__no6'>Non</label>
-        </div>`,
-      row07:
-        `<h3 class="radio__h3"><i class="fa-solid fa-video"></i>&ensp;Partie enregistrée</h3>
-        <div id="recorded-game6">
-        <input type='radio' id='recorded-game__yes6' name='recorded-game' value='yes'>
-          <label for='recorded-game__yes6'>Oui</label>
-        &emsp;
-        <input type='radio' id='recorded-game__no6' name='recorded-game'value='no'>
-          <label for='recorded-game__no6'>Non</label>
-        </div>`,
-      row08:
-        `<h3 class="radio__h3"><i class="fa-solid fa-people-roof"></i>&ensp;Partie privée</h3>
-        <div id="private-game6">
-        <input type='radio' id='private-game__yes6' name='private-game' value='yes'>
-          <label for='private-game__yes6'>Oui</label>
-        &emsp;
-        <input type='radio' id='private-game__no6' name='private-game'value='no'>
-          <label for='private-game__no6'>Non</label>
-        </div>`,
-      row09:
-        `<button class="cost-estimate" type="button" onclick="calcEstimate6()">Estimer le coût</button>
-        <table class="additional-form__table">
-          <tr>
-            <td class="additional-form__boxe-a"><i class="fa-solid fa-coins"></i>&ensp;Estimation globale</td>
-            <td class="additional-form__boxe-b" id="additional-form__boxe-b6">-&nbsp;€</td>
-          </tr>
-        </table>
-        <button class="card__contact-me"><i class='fa-solid fa-arrow-down'></i>&ensp;Pour me contacter&ensp;<i class='fa-solid fa-arrow-down'></i></button>`,
-      row10: `<input type="hidden" name="overall-estimate" id="overall-estimate6" value="">`,
-      row11:
-        `<label><i class="fa-solid fa-user"></i>&ensp;Prénom</label>
-          <br>
-        <input type="text" name="first-name" required></input>`,
-      row12:
-        `<label><i class="fa-solid fa-user"></i>&ensp;Nom</label>
-          <br>
-        <input type="text" name="name" required></input>`,
-      row13:
-        `<label><i class="fa-solid fa-envelope"></i>&ensp;Courriel</label>
-          <br>
-        <input type="email" name="email" required>`,
-      row14:
-        `<label><i class="fa-solid fa-phone"></i>&ensp;Téléphone</label>
-          <br>
-        <input type="tel" pattern="[0-9]*" name="phone" required>`,
-      row15: ``,
-      row16: ``,
-      row17: ``,
-      row18: `<button class="card__send-button" id="card__send-button6" type="submit"><i class="fa-solid fa-paper-plane"></i>&ensp;Envoi</button>`,
-    },
+    }
   ]
   
   const cardsContainer = document.getElementById('cards-container');
@@ -1372,27 +830,27 @@ const Prestations = [
       alert("Veuillez remplir tous les champs nécessaires.");
     }
   }
-  
-  function calcEstimate3() {
+
+  function calcEstimate2() {
     // Récupérer les valeurs des champs
-    var ageField = document.getElementById("age3");
-    var participantsField = document.getElementById("number-participants3");
-    var durationField = document.getElementById("game-duration3");
-    var scenarioTitle = document.getElementById("scenario3");
-    var scenarioYes = document.getElementById("scenario__yes3").checked;
-    var scenarioNo = document.getElementById("scenario__no3").checked;
-    var deadlineTitle = document.getElementById("deadline3");
-    var deadlineYes = document.getElementById("deadline__yes3").checked;
-    var deadlineNo = document.getElementById("deadline__no3").checked;
-    var addressField = document.getElementById("address3");
-    var postalCodeField = document.getElementById("postal-code3");
-    var cityField = document.getElementById("city3");
+    var companyField = document.getElementById("company2");
+    var participantsField = document.getElementById("number-participants2");
+    var durationField = document.getElementById("game-duration2");
+    var workshopField = document.getElementById("workshop2");
+    var workshoopYes = document.getElementById("workshop__yes2").checked;
+    var workshoopNo = document.getElementById("workshop__no2").checked;
+    var deadlineTitle = document.getElementById("deadline2");
+    var deadlineYes = document.getElementById("deadline__yes2").checked;
+    var deadlineNo = document.getElementById("deadline__no2").checked;
+    var addressField = document.getElementById("address2");
+    var postalCodeField = document.getElementById("postal-code2");
+    var cityField = document.getElementById("city2");
   
     // Réinitialiser les classes CSS pour enlever la surbrillance des champs précédemment vides
-    ageField.classList.remove("highlight-empty");
+    companyField.classList.remove("highlight-empty");
     participantsField.classList.remove("highlight-empty");
     durationField.classList.remove("highlight-empty");
-    scenarioTitle.classList.remove("highlight-empty");
+    workshopField.classList.remove("highlight-empty");
     deadlineTitle.classList.remove("highlight-empty");
     addressField.classList.remove("highlight-empty");
     postalCodeField.classList.remove("highlight-empty");
@@ -1400,9 +858,9 @@ const Prestations = [
   
     // Vérifier que les champs nécessaires sont remplis
     var isFormValid = true;
-  
-    if (ageField.value === "") {
-      ageField.classList.add("highlight-empty");
+
+    if (companyField.value === "") {
+      companyField.classList.add("highlight-empty");
       isFormValid = false;
     }
     if (participantsField.value === "") {
@@ -1413,8 +871,8 @@ const Prestations = [
       durationField.classList.add("highlight-empty");
       isFormValid = false;
     }
-    if (!scenarioYes && !scenarioNo) {
-      scenarioTitle.classList.add("highlight-empty");
+    if (!workshoopYes && !workshoopNo) {
+      workshopField.classList.add("highlight-empty");
       isFormValid = false;
     }
     if (!deadlineYes && !deadlineNo) {
@@ -1467,31 +925,29 @@ const Prestations = [
               console.log('One-way Kilometer Cost: ' + totalCost.toFixed(2) + '€');
               console.log('Total Cost: ' + (2 * totalCost).toFixed(2) + '€');
   
-              const duration = parseInt(durationField.value);
-              console.log('Duration: ' + duration);
-              const isCustomScenario = scenarioYes;
-              console.log('Custom Scenario: ' + isCustomScenario);
+              const isWorkshop = workshoopYes;
+              console.log('Workshop: ' + isWorkshop);
               const isDeadlineLessThanOneMonth = deadlineYes;
               console.log('Deadline: ' + isDeadlineLessThanOneMonth);
   
-              let basePrice = 55; // 55€ par heure
-              let referencePrice = basePrice * duration;
+              let basePrice = 90; // 90€ par heure
+              let referencePrice = basePrice * durationField.value;
               console.log('Reference Price: ' + referencePrice);
               let weightedPrice = referencePrice;
-              if (isCustomScenario && isDeadlineLessThanOneMonth) {
+              if (isWorkshop && isDeadlineLessThanOneMonth) {
                 weightedPrice = referencePrice * 1.8;
-              } else if (isCustomScenario) {
+              } else if (isWorkshop) {
                 weightedPrice = referencePrice * 1.5;
               } else if (isDeadlineLessThanOneMonth) {
                 weightedPrice = referencePrice * 1.3;
               }
               console.log('Weighted Price: ' + weightedPrice);
               const totalCostValue = totalCost;
-              console.log('Final Estimate = ' + weightedPrice + ' + ' + (duration > 5 ? '4' : '2') + ' * ' + totalCost);
-              const finalEstimation = duration > 5 ? weightedPrice + (4 * totalCostValue) : weightedPrice + (2 * totalCostValue);
+              console.log('Final Estimate = ' + weightedPrice + ' + 2 * ' + totalCost);
+              const finalEstimation = weightedPrice + (2 * totalCostValue);
               console.log('Final Estimate: ' + finalEstimation);
-              const estimateBox = document.getElementById("additional-form__boxe-b3");
-              const estimateInput = document.getElementById("overall-estimate3");
+              const estimateBox = document.getElementById("additional-form__boxe-b2");
+              const estimateInput = document.getElementById("overall-estimate2");
               estimateBox.textContent = Math.ceil(finalEstimation) + "€";
               estimateInput.value = finalEstimation.toFixed(2) + "€";
   
@@ -1513,5 +969,3 @@ const Prestations = [
       alert("Veuillez remplir tous les champs nécessaires.");
     }
   }
-  
-  
