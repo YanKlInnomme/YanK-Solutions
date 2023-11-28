@@ -111,3 +111,17 @@ while (i < 6) {
   }
   i++;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var logo = document.querySelector('.nav__logo a');
+  var burger = document.getElementById('burger');
+
+  logo.addEventListener('click', function() {
+    burger.classList.add('highlight');
+
+    // Ajoutez un délai pour permettre à l'animation de se terminer avant de supprimer la classe
+    setTimeout(function() {
+      burger.classList.remove('highlight');
+    }, 1000); // ajustez le délai en fonction de la durée de votre animation
+  });
+});

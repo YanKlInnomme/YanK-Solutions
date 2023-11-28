@@ -91,3 +91,22 @@ main {
 .hi-6 {
 	background-image: url(../images/construction.avif);
 }
+
+.burger.highlight .burger__bar {
+	animation: highlightAnimation 0.5s ease-in-out infinite;
+  }
+  
+  @keyframes highlightAnimation {
+	0% {
+	  transform: translateY(0) scaleX(1);
+	}
+	25% {
+	  transform: translateY(15px) scaleX(1.1);
+	}
+	50% {
+	  transform: translateY(25px) scaleX(1.3);
+	}
+	75% {
+	  transform: translateY(15px) scaleX(1.1);
+  }
+}

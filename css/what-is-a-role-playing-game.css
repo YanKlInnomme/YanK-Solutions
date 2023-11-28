@@ -1,7 +1,7 @@
 .area-1 {
 	border: 1px solid var(--color1);
 	color: var(--color1);
-	font-family: DreamOrphans;
+	font-family: SansationBold;
 	font-size: 1.9em;
 	grid-area: area-1;
 	line-height: 1.2;
@@ -40,7 +40,7 @@
 .area-3 {
 	border: 1px solid var(--color1);
 	color: var(--color1);
-	font-family: DreamOrphans;
+	font-family: SansationBold;
 	font-size: 1.2em;
 	grid-area: area-3;
 	padding: 3%;
@@ -80,7 +80,7 @@
 	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
 	border: 1px solid var(--color1);
 	color: var(--color2);
-	font-family: DreamOrphans;
+	font-family: SansationBold;
 	font-size: 2.15em;
 	grid-area: area-5;
 	line-height: 1.55;
@@ -98,7 +98,7 @@
 	background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
 	border: 1px solid var(--color1);
 	color: var(--color2);
-	font-family: DreamOrphans;
+	font-family: SansationBold;
 	font-size: 1.37em;
 	grid-area: area-6;
 	line-height: 1.2;
@@ -114,7 +114,7 @@
 .area-7 {
 	border: 1px solid var(--color1);
 	color: var(--color1);
-	font-family: DreamOrphans;
+	font-family: SansationBold;
 	font-size: 1.25em;
 	grid-area: area-7;
 	line-height: 1.2;
@@ -131,7 +131,7 @@
 .area-8 {
 	border: 1px solid var(--color1);
 	color: var(--color1);
-	font-family: DreamOrphans;
+	font-family: SansationBold;
 	font-size: 1.6em;
 	grid-area: area-8;
 	line-height: 1.1;

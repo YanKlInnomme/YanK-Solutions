@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $scénario = isset($_POST["workshop"]) ? $_POST["workshop"] : "";
     $délai = isset($_POST["deadline"]) ? $_POST["deadline"] : "";
     $partieEnregistrée = isset($_POST["recorded-game"]) ? $_POST["recorded-game"] : "";
-    $numberSessions = isset($_POST["number-sessions"]) ? $_POST["number-sessions"] : "";
     $coût = $_POST["overall-estimate"];
     
     // Adresse e-mail de destination
@@ -40,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "Atelier personnalisé: $workshop\n";
     $message .= "Délai inférieur à 1 mois: $délai\n";
     $message .= "Partie enregistrée: $partieEnregistrée\n";
-    $message .= "Nombre de sessions: $numberSessions\n";
     $message .= "Coût estimé: $coût\n";
     
     // Envoi de l'e-mail
