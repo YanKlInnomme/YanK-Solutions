@@ -147,6 +147,7 @@ src:url(../fonts/sansation-bold.eot),url(../fonts/sansation-bold.eot?#iefix) for
 	padding: .5em 1em!important;
 }
 
+
 .level-3 li a:hover {
 	color: var(--color1);
 }
@@ -157,6 +158,14 @@ src:url(../fonts/sansation-bold.eot),url(../fonts/sansation-bold.eot?#iefix) for
 
 .level-3 li:hover a {
 	color: var(--color1);
+}
+
+.level-3__active {
+	background-color: var(--color2) !important;
+}
+
+.level-3__active a:link,.level-3__active a:visited {
+	color: var(--color1) !important;
 }
 
 .level-a a.hovered-a > i {
