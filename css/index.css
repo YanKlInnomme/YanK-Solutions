@@ -53,7 +53,7 @@ main {
 	.hero-info h2 {
 		-webkit-text-stroke: .02em var(--color1);
 		color: transparent;
-		text-shadow: 0 0 0 transparent, 0 0 10px var(--color2), 0 0 10px var(--color2);
+		text-shadow: 0 0 0 transparent, 0 0 0 transparent, 0 0 0.5rem var(--color2);
 	}
 }
 
