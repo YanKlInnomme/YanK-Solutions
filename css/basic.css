@@ -59,6 +59,7 @@ src:url(../fonts/sansation-bold.eot),url(../fonts/sansation-bold.eot?#iefix) for
 	height: 3px;
 	transition: transform .3s 0.3s,background-color 2s;
 	width: 22px;
+	box-shadow: 0 0 15px var(--color2);
 }
 
 .header {

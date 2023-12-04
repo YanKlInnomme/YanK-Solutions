@@ -128,7 +128,7 @@ const Prestations = [
     },
     {
       index: "1",
-      backgroundimage: "background: url(../images/prestations/team-building-background-vtt.avif);",
+      backgroundimage: "background: url(../images/prestations/team-building-vtt-background.avif);",
       image: "team-building-vtt.avif",
       title: "Team Building",
       subtitle: "JdR à distance",
@@ -381,6 +381,23 @@ const Prestations = [
   
   const cardsContainer = document.getElementById('cards-container');
   Prestations.forEach((prestation) => {
+    const isMicrosoftEdge = /Edge/.test(navigator.userAgent) || /Edg/.test(navigator.userAgent);
+    console.log(isMicrosoftEdge);
+  
+    const imageFileName = prestation.image.split('.').slice(0, -1).join('.');
+    console.log(imageFileName);
+    const imageFileExtension = isMicrosoftEdge ? 'png' : prestation.image.split('.').pop();
+    console.log(imageFileExtension);
+    prestation.image = `${imageFileName}.${imageFileExtension}`;
+    console.log(prestation.image);
+  
+    const backgroundFileName = prestation.backgroundimage.split('.').slice(0, -1).join('.');
+    console.log(backgroundFileName);
+    const backgroundFileExtension = isMicrosoftEdge ? 'png);' : prestation.backgroundimage.split('.').pop();
+    console.log(backgroundFileExtension);
+    prestation.backgroundimage = `${backgroundFileName}.${backgroundFileExtension}`;
+    console.log(prestation.backgroundimage);
+
     const card = document.createElement('div');
     card.classList.add('card');
     card.innerHTML = `

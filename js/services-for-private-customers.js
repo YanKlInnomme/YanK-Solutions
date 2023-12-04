@@ -2174,6 +2174,6 @@ function calcEstimate6() {
     estimateBox.textContent = Math.ceil(finalEstimation) + "€";
     estimateInput.value = finalEstimation.toFixed(2) + "€";
   } else {
-    alert("Please fill in all required fields.");
+    alert("Veillez remplir tous les champs nécessaires.");
   }
 }
