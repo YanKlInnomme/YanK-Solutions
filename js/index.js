@@ -138,3 +138,77 @@ function main() {
 
 // Ajouter un gestionnaire d'événement pour le chargement du DOM
 document.addEventListener('DOMContentLoaded', main);
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    createCallButton();
+  }, 15000); // 15 seconds
+
+  function createCallButton() {
+    // Création du bouton
+    var callButton = document.createElement("a");
+    callButton.setAttribute("href", "https://cal.com/yanklinnomme");
+    callButton.setAttribute("target", "_blank");
+
+    // Création de l'élément pour l'animation Bodymovin
+    var animationContainer = document.createElement("div");
+    animationContainer.style.width = "75px";
+    animationContainer.style.height = "75px";
+    animationContainer.id = "svgCall";
+
+    // Ajout du style CSS au bouton
+    callButton.style.position = "fixed";
+    callButton.style.bottom = "20px";
+    callButton.style.right = "20px";
+    callButton.style.zIndex = "8";
+
+    // Ajout d'événements de la souris pour le changement de taille
+    callButton.addEventListener("mouseenter", function() {
+      // Changer la taille lorsque la souris passe sur le bouton
+      animationContainer.style.width = "100px";
+      animationContainer.style.height = "100px";
+    });
+
+    callButton.addEventListener("mouseleave", function() {
+      // Remettre la taille d'origine lorsque la souris quitte le bouton
+      animationContainer.style.width = "75px";
+      animationContainer.style.height = "75px";
+    });
+
+    // Ajout du bouton à la page
+    document.body.appendChild(callButton);
+
+    // Ajout de l'élément d'animation au bouton
+    callButton.appendChild(animationContainer);
+
+    // Récupération de l'élément container
+    var containerElement = document.getElementById("svgCall");
+
+    if (containerElement) {
+      // Configuration de l'animation Bodymovin
+      var animationData = {
+        container: containerElement,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "./json/call.json",
+      };
+
+      // Lancement de l'animation Bodymovin
+      var anim = lottie.loadAnimation(animationData);
+    } else {
+      console.error("Container element not found. Make sure the element with ID 'svgCall' exists in the DOM.");
+    }
+  }
+
+  // Fonction pour ouvrir le lien dans une nouvelle fenêtre lorsque le bouton est cliqué
+  document.addEventListener("click", function(event) {
+    var target = event.target;
+    if (target.tagName === "div" && target.parentNode.tagName === "A") {
+      event.preventDefault();
+      window.open(target.parentNode.href, "_blank");
+    }
+  });
+});
